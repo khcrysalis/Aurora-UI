@@ -10,7 +10,7 @@ import UIKit
 import PhotosUI
 
 struct Options: View {
-  @ObservedObject var options = Customization.shared
+  @ObservedObject var options = Settings.shared
   @State var isUsingDefaultBackground = false
   @State private var selectedImage: UIImage?
   @State private var selectedImageData: Data?

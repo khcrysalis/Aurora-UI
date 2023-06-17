@@ -9,10 +9,8 @@ import SwiftUI
 import MachO
 
 struct Main: View {
-    @ObservedObject var options = Customization.shared
+    @ObservedObject var options = Settings.shared
     @Binding var isTabViewShown: Bool
-    let version = UIDevice.current.systemVersion
-    let arch = String(cString: NXGetLocalArchInfo().pointee.name)
     
     var body: some View {
         ZStack {
@@ -36,7 +34,7 @@ struct Main: View {
                 }
                 Spacer()
                 VStack {
-                    Text("Device on \(version) (\(arch))")
+                    Text("Device on \(DeviceInfo.version) (\(DeviceInfo.arch))")
                         .foregroundColor(Color(UIColor.label).opacity(0.4))
                         .font(.subheadline)
                 }

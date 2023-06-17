@@ -42,9 +42,9 @@ struct Main: View {
                 HStack {
                     VStack {
                         VStack {
-                            createButton(text: Validation.compatCheck() ? "Jailbreak" : "Unsupported") {
+                            createButton(text: Validation.compatCheck() ? "Jailbreak" : "Unsupported", action: {
                                 isTabViewShown.toggle()
-                            }
+                            }, isDisabled: { !Validation.compatCheck() })
                         }
                         
                         VStack {

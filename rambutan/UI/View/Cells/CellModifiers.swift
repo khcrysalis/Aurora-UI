@@ -63,16 +63,22 @@ func createButtonWithImage(imageURL: URL, buttonText: String, subtext: String, l
     }
 }
 
-func createButton(text: String, action: @escaping () -> Void) -> some View {
+func createButton(text: String, action: @escaping () -> Void, isDisabled: @escaping () -> Bool) -> some View {
     return Button(action: action) {
         HStack {
             Spacer()
-            Text(text)
-                .foregroundColor(Color(UIColor.label))
-            Spacer()
-            Image(systemName: "chevron.right")
-                .foregroundColor(Color(UIColor.secondaryLabel))
-                .font(Font.body.weight(.semibold))
+            if isDisabled() && !isSimulator() {
+                Text(text)
+                    .foregroundColor(Color(UIColor.label).opacity(0.5))
+                Spacer()
+            } else {
+                Text(text)
+                    .foregroundColor(Color(UIColor.label))
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(Color(UIColor.secondaryLabel))
+                    .font(Font.body.weight(.semibold))
+            }
         }
         .padding()
         .background(Blur(style: .systemThinMaterial))
@@ -80,6 +86,7 @@ func createButton(text: String, action: @escaping () -> Void) -> some View {
         .cornerRadius(26)
         .padding(.bottom, 5)
     }
+    .disabled(isDisabled() && !isSimulator())
 }
 
 struct CheckmarkView: View {

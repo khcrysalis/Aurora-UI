@@ -13,16 +13,30 @@ struct Credits: View {
         ZStack {
             VStack {
                 Spacer()
-                Image(systemName: "person.fill")
-                    .resizable()
-                    .frame(width: 75, height: 75)
-                    .foregroundColor(Color(UIColor.label).opacity(0.4))
-                    .shadow(color: Color.black.opacity(0.1), radius: 10)
-                Spacer()
                 VStack {
                     Section(header:
                         CustomSectionHeader(title: "Credits & Contributors")
                     ) {
+                        Button(action: {
+                            if let url = URL(string: "https://google.com") {
+                                UIApplication.shared.open(url)
+                            }
+                        }) {
+                            HStack {
+                                Text("More credits can be found here")
+                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .font(.subheadline)
+                                Image(systemName: "chevron.right")
+                                    .resizable()
+                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .font(Font.body.weight(.heavy))
+                                    .frame(width: 5, height: 9)
+
+
+                            }
+                            .padding(.bottom, 10)
+                        }
+                        
                         VStack {
                             createButtonWithImage(imageURL: URL(string: "https://github.com/mineek.png")!, buttonText: "mineek", subtext: "Example", linkURL: URL(string: "https://github.com/mineek")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/flowerible.png")!, buttonText: "samiiau", subtext: "Example", linkURL: URL(string: "https://github.com/flowerible")!)

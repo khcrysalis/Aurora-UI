@@ -32,9 +32,10 @@ func createButtonWithImage(imageURL: URL, buttonText: String, subtext: String, l
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 56, height: 56)
+                        .frame(width: 47, height: 47)
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                 }
+                .padding(.trailing, 5)
                 VStack(alignment: .leading) {
                     Text(buttonText)
                         .font(.title2)

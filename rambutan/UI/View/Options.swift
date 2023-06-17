@@ -20,14 +20,6 @@ struct Options: View {
 	ZStack {
 	  VStack {
 		Spacer()
-		Image(systemName: "gear")
-		  .resizable()
-		  .frame(width: 75, height: 75)
-		  .foregroundColor(Color(UIColor.label).opacity(0.4))
-		  .shadow(color: Color.black.opacity(0.1), radius: 10)
-		  .animation(.easeInOut(duration: 0.4))
-		
-		Spacer()
 		HStack {
 		  VStack {
 			Section(header: CustomSectionHeader(title: "Customization")) {

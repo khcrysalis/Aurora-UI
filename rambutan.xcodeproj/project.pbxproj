@@ -21,6 +21,7 @@
 		3338241E2A3D15DD00DECEA8 /* Jailbreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3338241D2A3D15DD00DECEA8 /* Jailbreak.swift */; };
 		333824212A3D160B00DECEA8 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824202A3D160B00DECEA8 /* DeviceInfo.swift */; };
 		333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824332A3D4E8100DECEA8 /* Reboot.swift */; };
+		AAD2FA372A3DBB2E008D8AF1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3338241D2A3D15DD00DECEA8 /* Jailbreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jailbreak.swift; sourceTree = "<group>"; };
 		333824202A3D160B00DECEA8 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		333824332A3D4E8100DECEA8 /* Reboot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reboot.swift; sourceTree = "<group>"; };
+		AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				333823DB2A3C282E00DECEA8 /* rambutanApp.swift */,
 				333824052A3C2A1900DECEA8 /* UI */,
+				AAD2FA332A3DB5B8008D8AF1 /* Utilities */,
 				333823DF2A3C283000DECEA8 /* Assets.xcassets */,
 			);
 			path = rambutan;
@@ -126,6 +129,14 @@
 				333824332A3D4E8100DECEA8 /* Reboot.swift */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		AAD2FA332A3DB5B8008D8AF1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 				333824072A3C2A3B00DECEA8 /* Main.swift in Sources */,
 				3338241E2A3D15DD00DECEA8 /* Jailbreak.swift in Sources */,
 				333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */,
+				AAD2FA372A3DBB2E008D8AF1 /* ImagePicker.swift in Sources */,
 				333824192A3C860B00DECEA8 /* ColorPicker.swift in Sources */,
 				333823DE2A3C282E00DECEA8 /* ContentView.swift in Sources */,
 				333824212A3D160B00DECEA8 /* DeviceInfo.swift in Sources */,
@@ -342,6 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -370,6 +383,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

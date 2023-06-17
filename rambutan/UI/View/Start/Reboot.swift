@@ -31,7 +31,7 @@ struct Reboot: View {
             }
             .padding(.bottom, 100)
         }
-        .statusBar(hidden: true)
+		.statusBar(hidden: true)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                 print("Some reboot function probably")
@@ -46,6 +46,3 @@ struct Reboot: View {
         }
     }
 }
-
-
-

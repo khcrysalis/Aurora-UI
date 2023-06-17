@@ -26,7 +26,7 @@ struct Main: View {
                             .foregroundColor(Color(UIColor.label).opacity(0.4))
                             .font(.headline)
                             .shadow(color: Color.black.opacity(0.1), radius: 10)
-                        Text("for iOS 14.0 - 14.8")
+                        Text("for iOS 14.6 - 14.8")
                             .foregroundColor(Color(UIColor.label).opacity(0.4))
                             .font(.subheadline)
                             .shadow(color: Color.black.opacity(0.1), radius: 10)
@@ -34,7 +34,7 @@ struct Main: View {
                 }
                 Spacer()
                 VStack {
-                    Text("Device on \(DeviceInfo.version) (\(DeviceInfo.arch))")
+                    Text("\(DeviceInfo.current.machineName) running \(DeviceInfo.current.platformName) \(DeviceInfo.current.version)")
                         .foregroundColor(Color(UIColor.label).opacity(0.4))
                         .font(.subheadline)
                 }
@@ -42,7 +42,7 @@ struct Main: View {
                 HStack {
                     VStack {
                         VStack {
-                            createButton(text: "Jailbreak") {
+                            createButton(text: Validation.compatCheck() ? "Jailbreak" : "Unsupported") {
                                 isTabViewShown.toggle()
                             }
                         }

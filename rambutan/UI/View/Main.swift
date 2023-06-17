@@ -9,6 +9,7 @@ import SwiftUI
 import MachO
 
 struct Main: View {
+    @ObservedObject var options = Customization.shared
     @Binding var isTabViewShown: Bool
     let version = UIDevice.current.systemVersion
     let arch = String(cString: NXGetLocalArchInfo().pointee.name)
@@ -52,10 +53,10 @@ struct Main: View {
                             HStack {
                                 Spacer()
                                 VStack {
-                                    Toggle("Tweaks", isOn: .constant(true))
+                                    Toggle("Tweaks", isOn: $options.isTweaksEnabled)
                                         .foregroundColor(Color(UIColor.label))
                                     Divider()
-                                    Toggle("Restore RootFS", isOn: .constant(false))
+                                    Toggle("Restore RootFS", isOn: $options.isRestoreRootfsEnabled)
                                         .foregroundColor(Color(UIColor.label))
                                 }
                                 Spacer()

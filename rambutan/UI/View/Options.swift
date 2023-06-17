@@ -10,6 +10,7 @@ import UIKit
 import PhotosUI
 
 struct Options: View {
+  @ObservedObject var options = Customization.shared
   @State var isUsingDefaultBackground = false
   @State private var selectedImage: UIImage?
   @State private var selectedImageData: Data?
@@ -62,10 +63,10 @@ struct Options: View {
 				HStack {
 				  Spacer()
 				  VStack {
-					Toggle("Show More Logs", isOn: .constant(true))
+					Toggle("Show More Logs", isOn: $options.isLogsEnabled)
 					  .foregroundColor(Color(UIColor.label))
 					Divider()
-					Toggle("iOS OTA Updates", isOn: .constant(false))
+					Toggle("iOS OTA Updates", isOn: $options.isOTAEnabled)
 					  .foregroundColor(Color(UIColor.label))
 				  }
 				  Spacer()

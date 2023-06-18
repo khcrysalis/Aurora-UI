@@ -74,7 +74,9 @@ struct Jailbreak: View {
 //		showRebootView = true
 //	  }
 	  animateShadow()
-	  launchExampleExploit()
+        DispatchQueue(label: "Exploit").async {
+            launchExampleExploit()
+        }
 	}
   }
   
@@ -86,9 +88,13 @@ struct Jailbreak: View {
   
   func launchExampleExploit() {
 	statusUpdate("Status: Launching kexploitd")
+      sleep(1)
 	statusUpdate("Status: balls")
+      sleep(1)
 	statusUpdate("Status: balls2")
+      sleep(1)
 	statusUpdate("Status: balls4")
+      sleep(1)
 	statusUpdate("Status: balls9")
 	print("balls")
   }

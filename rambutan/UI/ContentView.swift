@@ -15,7 +15,7 @@ struct ContentView: View {
   
   var body: some View {
 	ZStack {
-	  Image("marek-piwnicki-i0ssRdozgCQ-unsplash")
+	  Image("milad-fakurian-u8Jn2rzYIps-unsplash")
 		.resizable()
 		.aspectRatio(contentMode: .fill)
 		.edgesIgnoringSafeArea(.vertical)

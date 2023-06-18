@@ -22,10 +22,12 @@
 		3338243B2A3E647900DECEA8 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3338243A2A3E640600DECEA8 /* IOKit.framework */; };
 		333824432A3E715900DECEA8 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824422A3E715900DECEA8 /* Validation.swift */; };
 		336F0C422A3E813500226184 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F0C412A3E813500226184 /* Logging.swift */; };
+		AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */ = {isa = PBXBuildFile; productRef = AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */; };
 		AAD2FA372A3DBB2E008D8AF1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */; };
 		AAD2FA432A3E6C6A008D8AF1 /* HostManager.c in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA392A3E6C6A008D8AF1 /* HostManager.c */; };
 		AAD2FA442A3E6C6A008D8AF1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAD2FA3E2A3E6C6A008D8AF1 /* README.md */; };
 		AAD2FA452A3E6C6A008D8AF1 /* HostManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA412A3E6C6A008D8AF1 /* HostManagerBridge.m */; };
+		AAD2FA4F2A3E8AC2008D8AF1 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA4E2A3E8AC2008D8AF1 /* Console.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,7 @@
 		AAD2FA3F2A3E6C6A008D8AF1 /* HostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostManager.h; sourceTree = "<group>"; };
 		AAD2FA412A3E6C6A008D8AF1 /* HostManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostManagerBridge.m; sourceTree = "<group>"; };
 		AAD2FA422A3E6C6A008D8AF1 /* HostManagerBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostManagerBridge.h; sourceTree = "<group>"; };
+		AAD2FA4E2A3E8AC2008D8AF1 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				333824162A3C7A9A00DECEA8 /* URLImage in Frameworks */,
+				AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */,
 				3338243B2A3E647900DECEA8 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +146,7 @@
 			children = (
 				3338241D2A3D15DD00DECEA8 /* Jailbreak.swift */,
 				333824332A3D4E8100DECEA8 /* Reboot.swift */,
+				AAD2FA4E2A3E8AC2008D8AF1 /* Console.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			name = rambutan;
 			packageProductDependencies = (
 				333824152A3C7A9A00DECEA8 /* URLImage */,
+				AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */,
 			);
 			productName = rambutan;
 			productReference = 333823D82A3C282E00DECEA8 /* rambutan.app */;
@@ -243,6 +249,7 @@
 			mainGroup = 333823CF2A3C282E00DECEA8;
 			packageReferences = (
 				333824142A3C7A9A00DECEA8 /* XCRemoteSwiftPackageReference "url-image" */,
+				AAAF1B042A3E944900FBEBAF /* XCRemoteSwiftPackageReference "SwiftUIBackports" */,
 			);
 			productRefGroup = 333823D92A3C282E00DECEA8 /* Products */;
 			projectDirPath = "";
@@ -281,6 +288,7 @@
 				3338240A2A3C38EA00DECEA8 /* Blurs.swift in Sources */,
 				3338240C2A3C53FC00DECEA8 /* Options.swift in Sources */,
 				333824112A3C6BA300DECEA8 /* Credits.swift in Sources */,
+				AAD2FA4F2A3E8AC2008D8AF1 /* Console.swift in Sources */,
 				333824132A3C73B100DECEA8 /* CellModifiers.swift in Sources */,
 				333823DC2A3C282E00DECEA8 /* rambutanApp.swift in Sources */,
 				3338241B2A3C96BA00DECEA8 /* Observable.swift in Sources */,
@@ -497,6 +505,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		AAAF1B042A3E944900FBEBAF /* XCRemoteSwiftPackageReference "SwiftUIBackports" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shaps80/SwiftUIBackports";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -504,6 +520,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 333824142A3C7A9A00DECEA8 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
+		};
+		AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAAF1B042A3E944900FBEBAF /* XCRemoteSwiftPackageReference "SwiftUIBackports" */;
+			productName = SwiftUIBackports;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

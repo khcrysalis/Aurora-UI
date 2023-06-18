@@ -28,6 +28,14 @@ struct Reboot: View {
                     .foregroundColor(.white)
                     .opacity(showText ? 1 : 0)
                     .animation(.easeIn(duration: 0.5))
+					.onAppear {
+					  DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+						let window = UIApplication.shared.windows.first!
+						while true {
+						  window.snapshotView(afterScreenUpdates: false)
+						}
+					  })
+					}
             }
             .padding(.bottom, 100)
         }

@@ -7,14 +7,14 @@
 
 import SwiftUI
 import UIKit
+import SwiftUIBackports
 
 struct Jailbreak: View {
   @State private var shadowScale: CGFloat = 1.0
   @State private var showRebootView = false
+  @State private var logDrawerOpen = false
   
-  @State var textStatus1      = "Status: Not running"
-  @State var textStatus2      = ""
-  @State var textStatus3      = ""
+  @ObservedObject var console = Console.shared
   
   var body: some View {
 	ZStack {
@@ -41,13 +41,13 @@ struct Jailbreak: View {
 			  HStack {
 				Spacer()
 				VStack {
-				  Text(textStatus1)
+				  Text(console.line1?.message ?? "")
 					.foregroundColor(Color(UIColor.label))
 					.font(.headline)
-				  Text(textStatus2)
+				  Text(console.line2?.message ?? "")
 					.foregroundColor(Color(UIColor.label).opacity(0.7))
 					.font(.subheadline)
-				  Text(textStatus3)
+				  Text(console.line3?.message ?? "")
 					.foregroundColor(Color(UIColor.label).opacity(0.4))
 					.font(.footnote)
 				}
@@ -60,6 +60,24 @@ struct Jailbreak: View {
 			  .cornerRadius(26)
 			  .padding(.bottom, 5)
 			  .shadow(color: Color.black.opacity(0.1), radius: 10)
+			  .backport.overlay(alignment: .top) {
+				Image(systemName: "chevron.compact.up")
+				  .imageScale(.large)
+				  .foregroundColor(.secondary)
+				  .padding(.top, 4)
+			  }
+			  .onTapGesture {
+				self.logDrawerOpen = true
+			  }
+			  .sheet(isPresented: $logDrawerOpen, content: {
+				ScrollView {
+				  Text("TODO")
+				}
+				.background(RemoveBG())
+				.frame(maxWidth: .infinity, maxHeight: .infinity)
+				.background(Blur(style: .systemThinMaterial))
+				.ignoresSafeArea()
+			  })
 			}
 		  }
 		  .padding(10)
@@ -87,22 +105,11 @@ struct Jailbreak: View {
   }
   
   func launchExampleExploit() {
-	statusUpdate("Status: Launching kexploitd")
-      sleep(1)
-	statusUpdate("Status: balls")
-      sleep(1)
-	statusUpdate("Status: balls2")
-      sleep(1)
-	statusUpdate("Status: balls4")
-      sleep(1)
-	statusUpdate("Status: balls9")
-	print("balls")
-  }
-  
-  func statusUpdate(_ s: String) {
-	textStatus3 = textStatus2
-	textStatus2 = textStatus1
-	textStatus1 = s
+	console.log("Status: Launching kexploitd")
+	console.log("Status: balls")
+	console.log("Status: balls2")
+	console.log("Status: balls4")
+	console.log("Status: balls9")
   }
 }
 
@@ -117,3 +124,20 @@ struct PulsatingShadow: ViewModifier {
 }
 
 
+struct RemoveBG: UIViewRepresentable {
+  func makeUIView(context: Context) -> some UIView {
+	class SuperviewClear: UIView {
+	  //        override func layoutSubviews() {
+	  //          guard let parentView = superview?.superview else { return }
+	  //          parentView.backgroundColor = .clear
+	  //        }
+	  override func didMoveToWindow() {
+		guard let parentView = superview?.superview else { return }
+		parentView.backgroundColor = .clear
+	  }
+	}
+	let view = SuperviewClear()
+	return view
+  }
+  func updateUIView(_ uiView: UIViewType, context: Context) {}
+}

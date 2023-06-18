@@ -12,6 +12,10 @@ struct Jailbreak: View {
     @State private var shadowScale: CGFloat = 1.0
     @State private var showRebootView = false
     
+    @State var textStatus1      = "Status: Not running"
+    @State var textStatus2      = ""
+    @State var textStatus3      = ""
+    
     var body: some View {
         ZStack {
             if showRebootView {
@@ -37,15 +41,15 @@ struct Jailbreak: View {
                             HStack {
                                 Spacer()
                                 VStack {
-                                    Text("Preparing...")
-                                        .foregroundColor(Color(UIColor.label).opacity(0.4))
-                                        .font(.footnote)
-                                    Text("Getting Device Ready...")
-                                        .foregroundColor(Color(UIColor.label).opacity(0.7))
-                                        .font(.subheadline)
-                                    Text("Exploiting...")
+                                    Text(textStatus1)
                                         .foregroundColor(Color(UIColor.label))
                                         .font(.headline)
+                                    Text(textStatus2)
+                                        .foregroundColor(Color(UIColor.label).opacity(0.7))
+                                        .font(.subheadline)
+                                    Text(textStatus3)
+                                        .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                        .font(.footnote)
                                 }
                                 Spacer()
                             }
@@ -66,9 +70,9 @@ struct Jailbreak: View {
         }
         .animation(.easeInOut)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                showRebootView = true
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+//                showRebootView = true
+//            }
             animateShadow()
         }
     }
@@ -77,6 +81,21 @@ struct Jailbreak: View {
         withAnimation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
             shadowScale = 1.3
         }
+    }
+    
+    func launchExampleExploit() {
+            statusUpdate("Status: Launching kexploitd")
+            statusUpdate("Status: balls")
+            statusUpdate("Status: balls2")
+            statusUpdate("Status: balls4")
+            statusUpdate("Status: balls9")
+            print("balls")
+    }
+    
+    func statusUpdate(_ s: String) {
+        textStatus3 = textStatus2
+        textStatus2 = textStatus1
+        textStatus1 = s
     }
 }
 

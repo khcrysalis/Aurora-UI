@@ -21,6 +21,7 @@
 		333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824332A3D4E8100DECEA8 /* Reboot.swift */; };
 		3338243B2A3E647900DECEA8 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3338243A2A3E640600DECEA8 /* IOKit.framework */; };
 		333824432A3E715900DECEA8 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824422A3E715900DECEA8 /* Validation.swift */; };
+		336F0C422A3E813500226184 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F0C412A3E813500226184 /* Logging.swift */; };
 		AAD2FA372A3DBB2E008D8AF1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */; };
 		AAD2FA432A3E6C6A008D8AF1 /* HostManager.c in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA392A3E6C6A008D8AF1 /* HostManager.c */; };
 		AAD2FA442A3E6C6A008D8AF1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAD2FA3E2A3E6C6A008D8AF1 /* README.md */; };
@@ -42,6 +43,7 @@
 		333824332A3D4E8100DECEA8 /* Reboot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reboot.swift; sourceTree = "<group>"; };
 		3338243A2A3E640600DECEA8 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		333824422A3E715900DECEA8 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		336F0C412A3E813500226184 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AAD2FA392A3E6C6A008D8AF1 /* HostManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HostManager.c; sourceTree = "<group>"; };
 		AAD2FA3A2A3E6C6A008D8AF1 /* bridging or something.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bridging or something.h"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				333824092A3C38EA00DECEA8 /* Blurs.swift */,
 				333824122A3C73B100DECEA8 /* CellModifiers.swift */,
+				336F0C412A3E813500226184 /* Logging.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				333824072A3C2A3B00DECEA8 /* Main.swift in Sources */,
+				336F0C422A3E813500226184 /* Logging.swift in Sources */,
 				3338241E2A3D15DD00DECEA8 /* Jailbreak.swift in Sources */,
 				333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */,
 				AAD2FA372A3DBB2E008D8AF1 /* ImagePicker.swift in Sources */,

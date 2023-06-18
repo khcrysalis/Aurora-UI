@@ -26,7 +26,7 @@ struct ContentView: View {
 		.blur(radius: 100)
 	  
 	  if !isTabViewShown {
-		Blur(style: .systemThickMaterialDark)
+		Blur(style: .systemMaterialDark)
 		  .ignoresSafeArea()
 		  .opacity(0.7)
 	  }

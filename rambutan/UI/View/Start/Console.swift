@@ -23,11 +23,13 @@ class Console: ObservableObject {
 	let id = UUID()
 	let message: String
 	let type: LogType
+      
 	
 	enum LogType {
 	  case info
 	  case warning
 	  case error
+        
 	}
   }
   

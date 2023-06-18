@@ -43,11 +43,7 @@ struct Main: View {
                     VStack {
                         VStack {
                             createButton(text: Validation.compatCheck() ? "Jailbreak" : "Unsupported", action: {
-                                isTabViewShown.toggle()
-                                
-                                DispatchQueue(label: "Taurine").async {
-                                    Jailbreak().launchExampleExploit()
-                                }
+							  isTabViewShown.toggle()
                             }, isDisabled: { !Validation.compatCheck() })
                         }
                         

@@ -19,7 +19,7 @@ class Validation {
 }
 
 func isSimulator() -> Bool {
-    #if targetEnvironment(simulator)
+    #if targetEnvironment(simulator) || DEBUG
     return true
     #else
     return false

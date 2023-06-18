@@ -22,6 +22,18 @@ struct CustomSectionHeader: View {
     }
 }
 
+struct JailbreakSectionHeader: View {
+    var title: String
+    
+    var body: some View {
+        Text(title)
+            .font(.bold(.headline)())
+            .foregroundColor(.white)
+            .textCase(.none)
+            .padding(.leading, 20)
+    }
+}
+
 func createButtonWithImage(imageURL: URL, buttonText: String, subtext: String, linkURL: URL) -> some View {
     return VStack {
         Button(action: {

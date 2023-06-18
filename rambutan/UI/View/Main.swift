@@ -77,6 +77,3 @@ struct Main: View {
         }
     }
 }
-
-
-

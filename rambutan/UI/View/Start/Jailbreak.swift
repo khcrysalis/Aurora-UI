@@ -38,36 +38,42 @@ struct Jailbreak: View {
                     .padding(10)
                     .padding(.bottom, 30)
                     Spacer()
-                    HStack {
-                        VStack {
-                            HStack {
-                                //                                VStack {
-                                //                                    Text(console.line1?.message ?? "")
-                                //                                        .foregroundColor(Color(UIColor.label))
-                                //                                        .font(.headline)
-                                //                                        .animation(.easeInOut(duration: 0.5).delay(0.5))
-                                //                                    Text(console.line2?.message ?? "")
-                                //                                        .foregroundColor(Color(UIColor.label).opacity(0.7))
-                                //                                        .font(.subheadline)
-                                //                                        .animation(.easeInOut(duration: 0.5).delay(1.0))
-                                //                                    Text(console.line3?.message ?? "")
-                                //                                        .foregroundColor(Color(UIColor.label).opacity(0.4))
-                                //                                        .font(.footnote)
-                                //                                        .animation(.easeInOut(duration: 0.5).delay(1.5))
-                                //                                }
-                                ProgressView(value: progress)
-                                    .progressViewStyle(LinearProgressViewStyle())
-                                    .padding(.horizontal)
+                    VStack{
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(console.line3?.message ?? "")
+                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .font(.footnote)
+                                    .padding(.leading, 20)
+                                Text(console.line2?.message ?? "")
+                                    .foregroundColor(Color(UIColor.label).opacity(0.7))
+                                    .font(.subheadline)
+                                    .padding(.leading, 20)
+                                Text(console.line1?.message ?? "")
+                                    .foregroundColor(Color(UIColor.label))
+                                    .font(.headline)
+                                    .padding(.leading, 20)
                             }
-                            .padding()
-                            .background(Blur(style: .systemThinMaterial))
-                            .foregroundColor(.white)
-                            .cornerRadius(26)
-                            .padding(.bottom, 5)
-                            .shadow(color: Color.black.opacity(0.1), radius: 10)
+                            Spacer()
                         }
+                        
+                        HStack {
+                            VStack {
+                                HStack {
+                                    ProgressView(value: progress)
+                                        .progressViewStyle(LinearProgressViewStyle())
+                                        .padding(.horizontal)
+                                }
+                                .padding()
+                                .background(Blur(style: .systemThinMaterial))
+                                .foregroundColor(.white)
+                                .cornerRadius(26)
+                                .padding(.bottom, 5)
+                                .shadow(color: Color.black.opacity(0.1), radius: 10)
+                            }
+                        }
+                        .padding(10)
                     }
-                    .padding(10)
                     
                     HStack {
                         VStack {
@@ -103,7 +109,7 @@ struct Jailbreak: View {
                     
                 }
                 .padding()
-                .animation(.easeInOut(duration: 1.0))
+                //.animation(.easeInOut(duration: 1.0))
             }
         }
         .onAppear {
@@ -111,9 +117,6 @@ struct Jailbreak: View {
             DispatchQueue(label: "Exploit").async {
                 launchExampleExploit()
             }
-            //      DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            //        showRebootView = true
-            //      }
         }
     }
     
@@ -124,20 +127,39 @@ struct Jailbreak: View {
     }
     
     func launchExampleExploit() {
-        console.log("Status: Launching kexploitd")
-        progress = 0.2
+        console.log("Obtaining system privileges...")
+        //progress = 0.2
         sleep(1)
-        console.log("Status: balls")
-        progress = 0.4
+        console.log("Making file system writable...")
+        //progress = 0.4
         sleep(1)
-        console.log("Status: balls2")
-        progress = 0.6
+        console.log("Installing packages...")
+        //progress = 0.6
         sleep(1)
-        console.log("Status: balls4")
-        progress = 0.8
+        console.log("Installing services...")
         sleep(1)
-        console.log("Status: balls9")
+        console.log("Making file system writable...")
+        //progress = 0.4
+        sleep(1)
+        console.log("Installing packages...")
+        //progress = 0.6
+        sleep(1)
+        console.log("Installing services...")
+        sleep(1)
+        console.log("Making file system writable...")
+        //progress = 0.4
+        sleep(1)
+        console.log("Installing packages...")
+        //progress = 0.6
+        sleep(1)
+        console.log("Installing services...")
+        //progress = 0.8
+        sleep(1)
+        console.log("Cleaning up...")
         progress = 1.0
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                showRebootView = true
+//              }
     }
 }
 

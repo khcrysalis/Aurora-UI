@@ -38,10 +38,12 @@ struct Credits: View {
                         }
                         
                         VStack {
-                            createButtonWithImage(imageURL: URL(string: "https://github.com/mineek.png")!, buttonText: "mineek", subtext: "Example", linkURL: URL(string: "https://github.com/mineek")!)
-                            createButtonWithImage(imageURL: URL(string: "https://github.com/flowerible.png")!, buttonText: "samiiau", subtext: "Example", linkURL: URL(string: "https://github.com/flowerible")!)
-                            createButtonWithImage(imageURL: URL(string: "https://github.com/coolstar.png")!, buttonText: "CoolStar", subtext: "Example", linkURL: URL(string: "https://github.com/coolstar")!)
-                            createButtonWithImage(imageURL: URL(string: "https://github.com/ProcursusTeam.png")!, buttonText: "Procursus", subtext: "Example", linkURL: URL(string: "https://github.com/ProcursusTeam")!)
+                            createButtonWithImage(imageURL: URL(string: "https://github.com/mineek.png")!, buttonText: "mineek", subtext: "Developer", linkURL: URL(string: "https://github.com/mineek")!)
+                            createButtonWithImage(imageURL: URL(string: "https://github.com/flowerible.png")!, buttonText: "samiiau", subtext: "UI & Design", linkURL: URL(string: "https://github.com/flowerible")!)
+                            createButtonWithImage(imageURL: URL(string: "https://github.com/llsc12.png")!, buttonText: "Lakhan Lothiyi", subtext: "UI & Design", linkURL: URL(string: "https://github.com/llsc12")!)
+                            createButtonWithImage(imageURL: URL(string: "https://github.com/Odyssey-Team.png")!, buttonText: "Odyssey Team", subtext: "Taurine jailbreak", linkURL: URL(string: "https://github.com/orgs/Odyssey-Team/people")!)
+                            createButtonWithImage(imageURL: URL(string: "https://github.com/potmdehex.png")!, buttonText: "John Aakerblom", subtext: "Multicast Bytecopy Backport", linkURL: URL(string: "https://twitter.com/potmdehex")!)
+                            createButtonWithImage(imageURL: URL(string: "https://github.com/opa334.png")!, buttonText: "opa334", subtext: "Dopamine jailbreakd", linkURL: URL(string: "https://twitter.com/opa334dev")!)
                         }
                     }
                 }

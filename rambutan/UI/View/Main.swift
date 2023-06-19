@@ -34,7 +34,7 @@ struct Main: View {
                 }
                 Spacer()
                 VStack {
-                    Text("\(DeviceInfo.current.machineName) running \(DeviceInfo.current.platformName) \(DeviceInfo.current.version)")
+                    Text("\(DeviceInfo.current.machineName) running \(DeviceInfo.current.platformName) \(DeviceInfo.current.platformVer)")
                         .foregroundColor(Color(UIColor.label).opacity(0.4))
                         .font(.subheadline)
                 }
@@ -42,11 +42,11 @@ struct Main: View {
                 HStack {
                     VStack {
                         VStack {
-                            createButton(text: Validation.compatCheck() ? "Jailbreak" : "Unsupported", action: {
+                            createButton(text: Validation.compatibilityCheck() ? "Jailbreak" : "Unsupported", action: {
 							  withAnimation {
 								isTabViewShown.toggle()
 							  }
-                            }, isDisabled: { !Validation.compatCheck() })
+                            }, isDisabled: { !Validation.isCompatible })
                         }
                         
                         VStack {

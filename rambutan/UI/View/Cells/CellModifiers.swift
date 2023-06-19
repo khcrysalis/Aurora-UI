@@ -79,7 +79,7 @@ func createButton(text: String, action: @escaping () -> Void, isDisabled: @escap
     return Button(action: action) {
         HStack {
             Spacer()
-            if isDisabled() && !isSimulator() {
+            if isDisabled() {
                 Text(text)
                     .foregroundColor(Color(UIColor.label).opacity(0.5))
                 Spacer()
@@ -98,7 +98,7 @@ func createButton(text: String, action: @escaping () -> Void, isDisabled: @escap
         .cornerRadius(26)
         .padding(.bottom, 5)
     }
-    .disabled(isDisabled() && !isSimulator())
+    .disabled(isDisabled())
 }
 
 struct CheckmarkView: View {
@@ -109,7 +109,6 @@ struct CheckmarkView: View {
     var body: some View {
         Button(action: action) {
             HStack {
-
                 
                 Text(title)
                     .foregroundColor(Color(UIColor.label))

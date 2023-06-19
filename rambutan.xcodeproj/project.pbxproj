@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F60E6D52A40AE54004B9838 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60E6D42A40AE54004B9838 /* DeviceInfo.swift */; };
 		333823DC2A3C282E00DECEA8 /* rambutanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333823DB2A3C282E00DECEA8 /* rambutanApp.swift */; };
 		333823DE2A3C282E00DECEA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333823DD2A3C282E00DECEA8 /* ContentView.swift */; };
 		333823E02A3C283000DECEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333823DF2A3C283000DECEA8 /* Assets.xcassets */; };
@@ -21,17 +22,14 @@
 		333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824332A3D4E8100DECEA8 /* Reboot.swift */; };
 		333824432A3E715900DECEA8 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824422A3E715900DECEA8 /* Validation.swift */; };
 		336F0C422A3E813500226184 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F0C412A3E813500226184 /* Logging.swift */; };
-		336F0C442A3EAEBD00226184 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3338243A2A3E640600DECEA8 /* IOKit.framework */; };
 		33A4819D2A3F18810048FE22 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4819C2A3F18810048FE22 /* BallView.swift */; };
 		AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */ = {isa = PBXBuildFile; productRef = AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */; };
 		AAD2FA372A3DBB2E008D8AF1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */; };
-		AAD2FA432A3E6C6A008D8AF1 /* HostManager.c in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA392A3E6C6A008D8AF1 /* HostManager.c */; };
-		AAD2FA442A3E6C6A008D8AF1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAD2FA3E2A3E6C6A008D8AF1 /* README.md */; };
-		AAD2FA452A3E6C6A008D8AF1 /* HostManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA412A3E6C6A008D8AF1 /* HostManagerBridge.m */; };
 		AAD2FA4F2A3E8AC2008D8AF1 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA4E2A3E8AC2008D8AF1 /* Console.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F60E6D42A40AE54004B9838 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		333823D82A3C282E00DECEA8 /* rambutan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rambutan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		333823DB2A3C282E00DECEA8 /* rambutanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rambutanApp.swift; sourceTree = "<group>"; };
 		333823DD2A3C282E00DECEA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,19 +42,10 @@
 		3338241A2A3C96BA00DECEA8 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		3338241D2A3D15DD00DECEA8 /* Jailbreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jailbreak.swift; sourceTree = "<group>"; };
 		333824332A3D4E8100DECEA8 /* Reboot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reboot.swift; sourceTree = "<group>"; };
-		3338243A2A3E640600DECEA8 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		333824422A3E715900DECEA8 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		336F0C412A3E813500226184 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		33A4819C2A3F18810048FE22 /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		AAD2FA392A3E6C6A008D8AF1 /* HostManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HostManager.c; sourceTree = "<group>"; };
-		AAD2FA3A2A3E6C6A008D8AF1 /* bridging or something.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bridging or something.h"; sourceTree = "<group>"; };
-		AAD2FA3C2A3E6C6A008D8AF1 /* CoreFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreFoundation.h; sourceTree = "<group>"; };
-		AAD2FA3D2A3E6C6A008D8AF1 /* IOKitLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitLib.h; sourceTree = "<group>"; };
-		AAD2FA3E2A3E6C6A008D8AF1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		AAD2FA3F2A3E6C6A008D8AF1 /* HostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostManager.h; sourceTree = "<group>"; };
-		AAD2FA412A3E6C6A008D8AF1 /* HostManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostManagerBridge.m; sourceTree = "<group>"; };
-		AAD2FA422A3E6C6A008D8AF1 /* HostManagerBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostManagerBridge.h; sourceTree = "<group>"; };
 		AAD2FA4E2A3E8AC2008D8AF1 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +56,6 @@
 			files = (
 				333824162A3C7A9A00DECEA8 /* URLImage in Frameworks */,
 				AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */,
-				336F0C442A3EAEBD00226184 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				333823DA2A3C282E00DECEA8 /* rambutan */,
-				333824392A3E63FC00DECEA8 /* Frameworks */,
 				333823D92A3C282E00DECEA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,52 +141,13 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
-		333824392A3E63FC00DECEA8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3338243A2A3E640600DECEA8 /* IOKit.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		AAD2FA332A3DB5B8008D8AF1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				AAD2FA362A3DBB2E008D8AF1 /* ImagePicker.swift */,
-				AAD2FA382A3E6C6A008D8AF1 /* Zefram stolen code */,
+				2F60E6D42A40AE54004B9838 /* DeviceInfo.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		AAD2FA382A3E6C6A008D8AF1 /* Zefram stolen code */ = {
-			isa = PBXGroup;
-			children = (
-				AAD2FA392A3E6C6A008D8AF1 /* HostManager.c */,
-				AAD2FA3A2A3E6C6A008D8AF1 /* bridging or something.h */,
-				AAD2FA3B2A3E6C6A008D8AF1 /* include */,
-				AAD2FA3E2A3E6C6A008D8AF1 /* README.md */,
-				AAD2FA3F2A3E6C6A008D8AF1 /* HostManager.h */,
-				AAD2FA402A3E6C6A008D8AF1 /* wrapped */,
-			);
-			path = "Zefram stolen code";
-			sourceTree = "<group>";
-		};
-		AAD2FA3B2A3E6C6A008D8AF1 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				AAD2FA3C2A3E6C6A008D8AF1 /* CoreFoundation.h */,
-				AAD2FA3D2A3E6C6A008D8AF1 /* IOKitLib.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		AAD2FA402A3E6C6A008D8AF1 /* wrapped */ = {
-			isa = PBXGroup;
-			children = (
-				AAD2FA412A3E6C6A008D8AF1 /* HostManagerBridge.m */,
-				AAD2FA422A3E6C6A008D8AF1 /* HostManagerBridge.h */,
-			);
-			path = wrapped;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +216,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAD2FA442A3E6C6A008D8AF1 /* README.md in Resources */,
 				333823E02A3C283000DECEA8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +234,7 @@
 				333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */,
 				AAD2FA372A3DBB2E008D8AF1 /* ImagePicker.swift in Sources */,
 				333823DE2A3C282E00DECEA8 /* ContentView.swift in Sources */,
-				AAD2FA452A3E6C6A008D8AF1 /* HostManagerBridge.m in Sources */,
+				2F60E6D52A40AE54004B9838 /* DeviceInfo.swift in Sources */,
 				333824432A3E715900DECEA8 /* Validation.swift in Sources */,
 				3338240A2A3C38EA00DECEA8 /* Blurs.swift in Sources */,
 				3338240C2A3C53FC00DECEA8 /* Options.swift in Sources */,
@@ -296,7 +243,6 @@
 				333824132A3C73B100DECEA8 /* CellModifiers.swift in Sources */,
 				333823DC2A3C282E00DECEA8 /* rambutanApp.swift in Sources */,
 				3338241B2A3C96BA00DECEA8 /* Observable.swift in Sources */,
-				AAD2FA432A3E6C6A008D8AF1 /* HostManager.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +389,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "rambutan/UI/View/Utilities/Zefram stolen code/bridging or something.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -475,7 +421,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "rambutan/UI/View/Utilities/Zefram stolen code/bridging or something.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

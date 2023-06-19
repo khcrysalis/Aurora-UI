@@ -16,9 +16,9 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             // Animated Background
-//            Rectangle()
-//                .ignoresSafeArea() // Ignore safe area to cover the entire background
-//                .modifier(AnimatedBackground())
+            Rectangle()
+                .ignoresSafeArea() // Ignore safe area to cover the entire background
+                //.modifier(BallViewModifier())
             
             Blur(style: .systemUltraThinMaterialDark)
                 .ignoresSafeArea()

@@ -39,7 +39,7 @@ struct BallView: View {
         let rotation = randomDouble(in: -360...360)
         let saturation = randomDouble(in: 0.4...1.4)
         
-        return Image("milad-fakurian-u8Jn2rzYIps-unsplash")
+        return Image("magicpattern-65O4Dw6-xLg-unsplash")
             .resizable()
             .frame(width: randomWidth, height: randomHeight)
             .scaleEffect(scale)

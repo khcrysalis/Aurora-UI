@@ -20,11 +20,14 @@ struct BallView: View {
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
             
-            Blur(style: .systemChromeMaterialDark)
-                .edgesIgnoringSafeArea(.all)
+//            Blur(style: .systemChromeMaterialDark)
+//                .edgesIgnoringSafeArea(.all)
         }
         .onAppear {
-            withAnimation(Animation.linear(duration: 50).repeatForever()) {
+            withAnimation(
+                Animation.linear(duration: 150)
+                .repeatForever(autoreverses: true)
+            ) {
                 animation.toggle()
             }
         }

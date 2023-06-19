@@ -16,12 +16,10 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             // Animated Background
-            Rectangle()
-                .ignoresSafeArea() // Ignore safe area to cover the entire background
-                //.modifier(BallViewModifier())
+            BallView()
             
-            Blur(style: .systemUltraThinMaterialDark)
-                .ignoresSafeArea()
+            Blur(style: .systemChromeMaterialDark)
+                .edgesIgnoringSafeArea(.all)
             
             // Other Views
             if !isTabViewShown {
@@ -53,7 +51,7 @@ struct ContentView: View {
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                     .indexViewStyle(.page(backgroundDisplayMode: .always))
                     .opacity(blurOpacity)
-                    .transition(.move(edge: .bottom))
+                    .transition(.scale(scale: .leastNormalMagnitude))
                 } else {
                     Jailbreak()
                         .frame(width: UIScreen.main.bounds.width)

@@ -11,6 +11,7 @@ import MachO
 struct Main: View {
     @ObservedObject var options = Settings.shared
     @Binding var isTabViewShown: Bool
+    @State private var showAlert = false
     
     var body: some View {
         ZStack {
@@ -19,24 +20,30 @@ struct Main: View {
                     Image(systemName: "house.fill")
                         .resizable()
                         .frame(width: 37, height: 32)
-                        .foregroundColor(Color(UIColor.label).opacity(0.4))
+                        .foregroundColor(Color(UIColor.label).opacity(0.2))
                         .shadow(color: Color.black.opacity(0.1), radius: 10)
-                    VStack {
-                        Text("Taurine jailbreak")
-                            .foregroundColor(Color(UIColor.label).opacity(0.4))
-                            .font(.headline)
-                            .shadow(color: Color.black.opacity(0.1), radius: 10)
-                        Text("for iOS 14.6 - 14.8")
-                            .foregroundColor(Color(UIColor.label).opacity(0.4))
-                            .font(.subheadline)
-                            .shadow(color: Color.black.opacity(0.1), radius: 10)
-                    }
                 }
                 Spacer()
                 VStack {
-                    Text("\(DeviceInfo.current.machineName) running \(DeviceInfo.current.platformName) \(DeviceInfo.current.platformVer)")
-                        .foregroundColor(Color(UIColor.label).opacity(0.4))
-                        .font(.subheadline)
+                    Button(action: {
+                        showAlert = true
+                    }) {
+                        HStack {
+                            Image(systemName: "info.circle")
+                                .foregroundColor(Color(UIColor.label).opacity(0.4))
+                            
+                            Text("\(DeviceInfo.current.machineName) running \(DeviceInfo.current.platformName) \(DeviceInfo.current.platformVer)")
+                                .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                .font(.subheadline)
+                        }
+                    }
+                    .alert(isPresented: $showAlert) {
+                        Alert(
+                            title: Text("Supported Firmwares"),
+                            message: Text("iOS 14.6 - 14.8"),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }
                 }
                 .padding()
                 HStack {
@@ -70,7 +77,7 @@ struct Main: View {
                     }
                 }
                 .shadow(color: Color.black.opacity(0.1), radius: 10)
-                .padding(10)
+                .padding(.vertical, 10)
             }
             .padding()
             .transition(.opacity)

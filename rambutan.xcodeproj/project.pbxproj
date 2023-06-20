@@ -23,6 +23,7 @@
 		333824432A3E715900DECEA8 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824422A3E715900DECEA8 /* Validation.swift */; };
 		336F0C422A3E813500226184 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F0C412A3E813500226184 /* Logging.swift */; };
 		33A4819D2A3F18810048FE22 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4819C2A3F18810048FE22 /* Background.swift */; };
+		33F98EA02A413F3F001B1A27 /* Banners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F98E9F2A413F3F001B1A27 /* Banners.swift */; };
 		AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */ = {isa = PBXBuildFile; productRef = AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */; };
 		AAD2FA372A3DBB2E008D8AF1 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA362A3DBB2E008D8AF1 /* ThemePicker.swift */; };
 		AAD2FA4F2A3E8AC2008D8AF1 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA4E2A3E8AC2008D8AF1 /* Console.swift */; };
@@ -45,6 +46,7 @@
 		333824422A3E715900DECEA8 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		336F0C412A3E813500226184 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		33A4819C2A3F18810048FE22 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		33F98E9F2A413F3F001B1A27 /* Banners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banners.swift; sourceTree = "<group>"; };
 		AAD2FA362A3DBB2E008D8AF1 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		AAD2FA4E2A3E8AC2008D8AF1 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				333824092A3C38EA00DECEA8 /* Blurs.swift */,
 				333824122A3C73B100DECEA8 /* CellModifiers.swift */,
 				336F0C412A3E813500226184 /* Logging.swift */,
+				33F98E9F2A413F3F001B1A27 /* Banners.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				AAD2FA372A3DBB2E008D8AF1 /* ThemePicker.swift in Sources */,
 				333823DE2A3C282E00DECEA8 /* ContentView.swift in Sources */,
 				2F60E6D52A40AE54004B9838 /* DeviceInfo.swift in Sources */,
+				33F98EA02A413F3F001B1A27 /* Banners.swift in Sources */,
 				333824432A3E715900DECEA8 /* Validation.swift in Sources */,
 				3338240A2A3C38EA00DECEA8 /* Blurs.swift in Sources */,
 				3338240C2A3C53FC00DECEA8 /* Options.swift in Sources */,

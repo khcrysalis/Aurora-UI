@@ -35,8 +35,6 @@ struct Jailbreak: View {
                             .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
                     }
                     .shadow(color: Color.black.opacity(0.1), radius: 10)
-                    .padding(10)
-                    .padding(.bottom, 30)
                     Spacer()
                     VStack{
                         HStack {
@@ -72,7 +70,7 @@ struct Jailbreak: View {
                                 .shadow(color: Color.black.opacity(0.1), radius: 10)
                             }
                         }
-                        .padding(10)
+                        .padding(.vertical, 10)
                     }
                     
                     HStack {

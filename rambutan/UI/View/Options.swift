@@ -95,7 +95,7 @@ struct Options: View {
                     }
                 }
                 .shadow(color: Color.black.opacity(0.1), radius: 10)
-                .padding(10)
+                .padding(.vertical, 10)
                 .padding(.bottom, 30)
             }
             .padding()

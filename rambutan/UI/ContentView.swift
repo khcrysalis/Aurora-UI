@@ -13,6 +13,9 @@ struct ContentView: View {
     @State private var selectedTab: Tabs = .main
     @State private var blurOpacity: Double = 0.7
     
+    @State private var showToast = isSimulator()
+    
+    
     var body: some View {
         ZStack {
             // Animated Background
@@ -50,8 +53,7 @@ struct ContentView: View {
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         .indexViewStyle(.page(backgroundDisplayMode: .always))
-                        .opacity(blurOpacity)
-                        .transition(.scale(scale: .leastNormalMagnitude))
+                        //.opacity(blurOpacity)
                     } else {
                         Jailbreak()
                             .frame(width: UIScreen.main.bounds.width)
@@ -61,7 +63,11 @@ struct ContentView: View {
             }
         }
         .animation(.easeOut(duration: 0.4))
-        .background(Background()).animation(.easeInOut(duration: 3.0))
+        .background(Background().animation(.easeInOut(duration: 3.0)))
+        .toast(isPresenting: $showToast){
+            AlertToast(displayMode: .banner(.pop), type: .systemImage("exclamationmark.triangle.fill", Color(UIColor.label).opacity(0.4)), title: "TaurineInteractor is in Demo Mode", subTitle: "This will not actually jailbreak your device.")
+        }
+        
     }
     
     enum Tabs {

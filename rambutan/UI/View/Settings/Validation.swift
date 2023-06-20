@@ -26,7 +26,7 @@ private func isDebugging() -> Bool {
     return true
 }
 
-func isSimulator() -> Bool {
+private func isSimulator() -> Bool {
 #if targetEnvironment(simulator)
     return true
 #else

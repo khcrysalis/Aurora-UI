@@ -23,18 +23,25 @@ struct Jailbreak: View {
                 Reboot()
                     .transition(.opacity)
             } else {
+                
                 VStack {
+                    VariableBlurView()
+                        .frame(height: 600)
+                        .allowsHitTesting(false)
+                        .ignoresSafeArea()
                     Spacer()
-                    VStack {
+                }
+                VStack {
+                    HStack {
                         Image(systemName: "house.fill")
                             .resizable()
-                            .frame(width: 64, height: 53)
-                            .foregroundColor(Color(UIColor.label).opacity(0.4))
+                            .frame(width: 37, height: 32)
+                            .foregroundColor(Color(UIColor.label).opacity(0.2))
                             .shadow(color: Color.black.opacity(0.1), radius: 10)
                             .modifier(PulsatingShadow(scale: shadowScale))
                             .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
                     }
-                    .shadow(color: Color.black.opacity(0.1), radius: 10)
+                    
                     Spacer()
                     VStack{
                         HStack {
@@ -126,32 +133,9 @@ struct Jailbreak: View {
     
     func launchExampleExploit() {
         console.log("Obtaining system privileges...")
+        console.log("Obtaining system privileges...")
+        console.log("Obtaining system privileges...")
         //progress = 0.2
-        sleep(1)
-        console.log("Making file system writable...")
-        //progress = 0.4
-        sleep(1)
-        console.log("Installing packages...")
-        //progress = 0.6
-        sleep(1)
-        console.log("Installing services...")
-        sleep(1)
-        console.log("Making file system writable...")
-        //progress = 0.4
-        sleep(1)
-        console.log("Installing packages...")
-        //progress = 0.6
-        sleep(1)
-        console.log("Installing services...")
-        sleep(1)
-        console.log("Making file system writable...")
-        //progress = 0.4
-        sleep(1)
-        console.log("Installing packages...")
-        //progress = 0.6
-        sleep(1)
-        console.log("Installing services...")
-        //progress = 0.8
         sleep(1)
         console.log("Cleaning up...")
         progress = 1.0

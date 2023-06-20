@@ -18,8 +18,11 @@ final class Console: ObservableObject {
 
     func log(_ msg: String, type: Log.LogType = .info) {
         let log = Log(message: msg, type: type)
-        logs.insert(log, at: 0)
+        DispatchQueue.main.async {
+            self.logs.insert(log, at: 0)
+        }
     }
+
 }
 
 extension Console {

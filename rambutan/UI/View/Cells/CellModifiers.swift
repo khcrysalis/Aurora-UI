@@ -50,13 +50,13 @@ func createButtonWithImage(imageURL: URL, buttonText: String, subtext: String, l
                 .padding(.trailing, 5)
                 VStack(alignment: .leading) {
                     Text(buttonText)
-                        .font(.title2)
+                        .font(.title3)
                         .bold()
                         .foregroundColor(Color(UIColor.label))
                         .alignmentGuide(.leading) { _ in 0 }
                     
                     Text(subtext)
-                        .font(.subheadline)
+                        .font(.footnote)
                         .foregroundColor(Color(UIColor.secondaryLabel))
                         .alignmentGuide(.leading) { _ in 0 }
                 }

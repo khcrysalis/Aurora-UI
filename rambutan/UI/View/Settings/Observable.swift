@@ -9,12 +9,16 @@ import SwiftUI
 import MachO
 
 class Settings: ObservableObject {
-    @Published var isRestoreRootfsEnabled = false
-    @Published var isTweaksEnabled = true
-    @Published var isOTAEnabled = true
-    @Published var isLogsEnabled = true
+    @AppStorage("isRestoreRootfsEnabled") var isRestoreRootfsEnabled = false
+    @AppStorage("isTweaksEnabled") var isTweaksEnabled = true
+    @AppStorage("isOTAEnabled") var isOTAEnabled = true
+    @AppStorage("isLogsEnabled") var isLogsEnabled = true
+    @AppStorage("selectedTheme") var selectedTheme = "Flower"
+    @AppStorage("selectedImage") var selectedThemeImage = "milad-fakurian-u8Jn2rzYIps-unsplash"
+    
     static let shared = Settings()
 }
+
 
 struct DeviceInfo {
     static let current = DeviceInfo()

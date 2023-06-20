@@ -7,52 +7,43 @@
 
 import Foundation
 
-class Console: ObservableObject {
-  static let shared = Console()
-  
-  @Published var logs: [Log] = []
-  
-  func clear() { self.logs.removeAll() }
-  
-  func log(_ msg: String, type: Log.LogType = .info) {
-	let log = Log(message: msg, type: type)
-	logs.insert(log, at: 0)
-  }
-  
-  struct Log: Identifiable {
-	let id = UUID()
-	let message: String
-	let type: LogType
-      
-	
-	enum LogType {
-	  case info
-	  case warning
-	  case error
-        
-	}
-  }
-  
+final class Console: ObservableObject {
+    static let shared = Console()
+
+    @Published var logs: [Log] = []
+
+    func clear() {
+        logs.removeAll()
+    }
+
+    func log(_ msg: String, type: Log.LogType = .info) {
+        let log = Log(message: msg, type: type)
+        logs.insert(log, at: 0)
+    }
 }
 
-extension Console.Log: Equatable {}
-
 extension Console {
-  var line1: Log? {
-	self.logs.first
-  }
-  
-  var line2: Log? {
-	self.logs.first { log in
-	  let index = self.logs.firstIndex { meow in log == meow }
-	  return index == 1
-	}
-  }
-  
-  var line3: Log? {
-	self.logs.first { log in
-	  let index = self.logs.firstIndex { meow in log == meow }
-	  return index == 2
-	}
-  }
+    struct Log: Identifiable, Equatable {
+        let id = UUID()
+        let message: String
+        let type: LogType
+
+        enum LogType {
+            case info, warning, error
+        }
+    }
+
+    var line1: Log? {
+        logs.first
+    }
+
+    var line2: Log? {
+        guard logs.count > 1 else { return nil }
+        return logs[1]
+    }
+
+    var line3: Log? {
+        guard logs.count > 2 else { return nil }
+        return logs[2]
+    }
 }

@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
-import AVKit
 
-struct BallView: View {
+struct Background: View {
+    @ObservedObject var options = Settings.shared
     @State private var animation = false
      
     var body: some View {
@@ -19,17 +19,6 @@ struct BallView: View {
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
-            
-//            Blur(style: .systemChromeMaterialDark)
-//                .edgesIgnoringSafeArea(.all)
-        }
-        .onAppear {
-            withAnimation(
-                Animation.linear(duration: 150)
-                .repeatForever(autoreverses: true)
-            ) {
-                animation.toggle()
-            }
         }
     }
     
@@ -42,7 +31,7 @@ struct BallView: View {
         let rotation = randomDouble(in: -360...360)
         let saturation = randomDouble(in: 0.4...1.4)
         
-        return Image("magicpattern-65O4Dw6-xLg-unsplash")
+        return Image(Settings().selectedThemeImage)
             .resizable()
             .frame(width: randomWidth, height: randomHeight)
             .scaleEffect(scale)

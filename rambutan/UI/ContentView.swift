@@ -16,50 +16,52 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             // Animated Background
-            BallView()
-            
-            Blur(style: .systemChromeMaterialDark)
-                .edgesIgnoringSafeArea(.all)
-            
-            // Other Views
-            if !isTabViewShown {
-                LinearGradient(colors: [Color.black], startPoint: .leading, endPoint: .trailing)
-                    .ignoresSafeArea()
-                    .opacity(0.6)
-            }
-            
             ZStack {
-                if selectedTab != .main {
-                    Blur(style: .systemUltraThinMaterialDark)
+                
+                Blur(style: .systemChromeMaterialDark)
+                    .edgesIgnoringSafeArea(.all)
+                
+                // Other Views
+                if !isTabViewShown {
+                    LinearGradient(colors: [Color.black], startPoint: .leading, endPoint: .trailing)
                         .ignoresSafeArea()
-                        .opacity(blurOpacity)
+                        .opacity(0.6)
                 }
                 
-                // Content Views
-                if isTabViewShown {
-                    TabView(selection: $selectedTab) {
-                        Options()
-                            .frame(width: UIScreen.main.bounds.width)
-                            .tag(Tabs.options)
-                    Main(isTabViewShown: $isTabViewShown)
-                            .frame(width: UIScreen.main.bounds.width)
-                            .tag(Tabs.main)
-                        Credits()
-                            .frame(width: UIScreen.main.bounds.width)
-                            .tag(Tabs.credits)
+                ZStack {
+                    if selectedTab != .main {
+                        Blur(style: .systemUltraThinMaterialDark)
+                            .ignoresSafeArea()
+                            .opacity(blurOpacity)
                     }
-                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                    .indexViewStyle(.page(backgroundDisplayMode: .always))
-                    .opacity(blurOpacity)
-                    .transition(.scale(scale: .leastNormalMagnitude))
-                } else {
-                    Jailbreak()
-                        .frame(width: UIScreen.main.bounds.width)
+                    
+                    // Content Views
+                    if isTabViewShown {
+                        TabView(selection: $selectedTab) {
+                            Options()
+                                .frame(width: UIScreen.main.bounds.width)
+                                .tag(Tabs.options)
+                            Main(isTabViewShown: $isTabViewShown)
+                                .frame(width: UIScreen.main.bounds.width)
+                                .tag(Tabs.main)
+                            Credits()
+                                .frame(width: UIScreen.main.bounds.width)
+                                .tag(Tabs.credits)
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                        .indexViewStyle(.page(backgroundDisplayMode: .always))
+                        .opacity(blurOpacity)
+                        .transition(.scale(scale: .leastNormalMagnitude))
+                    } else {
+                        Jailbreak()
+                            .frame(width: UIScreen.main.bounds.width)
+                    }
                 }
+                .animation(.easeOut(duration: 0.4))
             }
-            .animation(.easeOut(duration: 0.4))
         }
         .animation(.easeOut(duration: 0.4))
+        .background(Background())
     }
     
     enum Tabs {

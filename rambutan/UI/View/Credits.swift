@@ -9,6 +9,9 @@ import SwiftUI
 import URLImage
 
 struct Credits: View {
+    
+    @State private var showAlert = false
+    
     var body: some View {
         ZStack {
             VStack {
@@ -18,9 +21,7 @@ struct Credits: View {
                         CustomSectionHeader(title: "Credits & Contributors")
                     ) {
                         Button(action: {
-                            if let url = URL(string: "https://google.com") {
-                                UIApplication.shared.open(url)
-                            }
+                            showAlert = true
                         }) {
                             HStack {
                                 Text("More credits can be found here")
@@ -36,12 +37,18 @@ struct Credits: View {
                             }
                             .padding(.bottom, 10)
                         }
+                        .alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("Some title for later"),
+                                message: Text("Some message for later"),
+                                dismissButton: .default(Text("OK"))
+                            )
+                        }
                         
                         VStack {
                             createButtonWithImage(imageURL: URL(string: "https://github.com/mineek.png")!, buttonText: "mineek", subtext: "Developer", linkURL: URL(string: "https://github.com/mineek")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/flowerible.png")!, buttonText: "samiiau", subtext: "UI & Design", linkURL: URL(string: "https://github.com/flowerible")!)
-                            createButtonWithImage(imageURL: URL(string: "https://github.com/llsc12.png")!, buttonText: "Lakhan Lothiyi", subtext: "UI & Design", linkURL: URL(string: "https://github.com/llsc12")!)
-                            createButtonWithImage(imageURL: URL(string: "https://github.com/Odyssey-Team.png")!, buttonText: "Odyssey Team", subtext: "Taurine jailbreak", linkURL: URL(string: "https://github.com/orgs/Odyssey-Team/people")!)
+                            createButtonWithImage(imageURL: URL(string: "https://github.com/llsc12.png")!, buttonText: "Lakhan Lothiyi", subtext: "UI & App help", linkURL: URL(string: "https://github.com/llsc12")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/potmdehex.png")!, buttonText: "John Aakerblom", subtext: "Multicast Bytecopy Backport", linkURL: URL(string: "https://twitter.com/potmdehex")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/opa334.png")!, buttonText: "opa334", subtext: "Dopamine jailbreakd", linkURL: URL(string: "https://twitter.com/opa334dev")!)
                         }
@@ -56,4 +63,3 @@ struct Credits: View {
         .animation(.easeInOut)
     }
 }
-// https://github.com/ProcursusTeam

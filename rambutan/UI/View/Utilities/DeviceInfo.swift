@@ -46,25 +46,7 @@ class info {
     
     // Gets device architecture (e.g. arm64 or arm64e)
     public static func getArchitecture() -> String {
-#if targetEnvironment(simulator)
-        let ident = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"]!
-        let num = filterModel(String(ident))[0]
-        
-        switch (ident) {
-        case _ where ident.starts(with: "iPhone"):
-            return num >= 11 ? "arm64e" : "arm64"
-        case _ where ident.starts(with: "iPad"):
-            if (num == 8) {return "arm64e"}
-            return num >= 11 ? "arm64e" : "arm64"
-        case _ where ident.starts(with: "iPod"):
-            return "arm64"
-        default:
-            return "Unknown Architecture"
-        }
-#else
-        let archInfo = NXGetLocalArchInfo().pointee.name
-        return String(cString: archInfo) ?? "Unknown Architecture"
-#endif
+        return String(cString: NXGetLocalArchInfo().pointee.name)
     }
     
     // Gets OS Version (e.g. 14.7.1)
@@ -159,4 +141,5 @@ class info {
         }
     }
 }
+
 

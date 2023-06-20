@@ -61,7 +61,7 @@ struct ContentView: View {
             }
         }
         .animation(.easeOut(duration: 0.4))
-        .background(Background())
+        .background(Background()).animation(.easeInOut(duration: 3.0))
     }
     
     enum Tabs {

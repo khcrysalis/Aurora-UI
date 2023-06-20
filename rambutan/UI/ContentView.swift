@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var selectedTab: Tabs = .main
     @State private var blurOpacity: Double = 0.7
     
-    @State private var showToast = !Validation.isCompatible
+    @State private var showToast = isSimulator()
     
     
     var body: some View {

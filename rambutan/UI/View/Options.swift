@@ -60,9 +60,6 @@ struct Options: View {
                                     VStack {
                                         Toggle("Show More Logs", isOn: $options.isLogsEnabled)
                                             .foregroundColor(Color(UIColor.label))
-                                        Divider()
-                                        Toggle("iOS OTA Updates", isOn: $options.isOTAEnabled)
-                                            .foregroundColor(Color(UIColor.label))
                                     }
                                     Spacer()
                                 }

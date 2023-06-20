@@ -11,8 +11,7 @@ import MachO
 class Settings: ObservableObject {
     @AppStorage("isRestoreRootfsEnabled") var isRestoreRootfsEnabled = false
     @AppStorage("isTweaksEnabled") var isTweaksEnabled = true
-    @AppStorage("isOTAEnabled") var isOTAEnabled = true
-    @AppStorage("isLogsEnabled") var isLogsEnabled = true
+    @AppStorage("isLogsEnabled") var isLogsEnabled = false
     @AppStorage("selectedTheme") var selectedTheme = "Flower"
     @AppStorage("selectedImage") var selectedThemeImage = "milad-fakurian-u8Jn2rzYIps-unsplash"
     

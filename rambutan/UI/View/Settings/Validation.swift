@@ -50,7 +50,7 @@ class Validation {
         if (isSimulator() && simulatorBypass) {isCompatible = true; return true}
         if (forceCompat) {isCompatible = true; return true}
 
-        if (arch.isEmpty || !arch.contains("arm64")) {
+        if (arch.isEmpty) {
             print("[-] Incompatible Architecture: \(arch)")
             return false
         }

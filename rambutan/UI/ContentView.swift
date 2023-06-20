@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var selectedTab: Tabs = .main
     @State private var blurOpacity: Double = 0.7
     
-    @State private var showToast = Validation.isCompatible
+    @State private var showToast = !Validation.isCompatible
     
     
     var body: some View {
@@ -28,7 +28,7 @@ struct ContentView: View {
                 if !isTabViewShown {
                     LinearGradient(colors: [Color.black], startPoint: .leading, endPoint: .trailing)
                         .ignoresSafeArea()
-                        .opacity(0.6)
+                        .opacity(0.5)
                 }
                 
                 ZStack {

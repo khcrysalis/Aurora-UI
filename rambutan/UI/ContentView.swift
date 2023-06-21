@@ -53,7 +53,6 @@ struct ContentView: View {
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         .indexViewStyle(.page(backgroundDisplayMode: .always))
-                        //.opacity(blurOpacity)
                     } else {
                         Jailbreak()
                             .frame(width: UIScreen.main.bounds.width)

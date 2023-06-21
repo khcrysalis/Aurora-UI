@@ -64,7 +64,7 @@ struct ContentView: View {
         .animation(.easeOut(duration: 0.4))
         .background(Background().animation(.easeInOut(duration: 3.0)))
         .toast(isPresenting: $showToast){
-            AlertToast(displayMode: .banner(.pop), type: .systemImage("exclamationmark.triangle.fill", Color(UIColor.label).opacity(0.4)), title: "TaurineInteractor is in Demo Mode", subTitle: "This will not actually jailbreak your device.")
+            AlertToast(displayMode: .banner(.pop), type: .systemImage("exclamationmark.triangle.fill", Color(UIColor.label).opacity(0.4)), title: "AORAInteractor is in Demo Mode", subTitle: "This will not actually jailbreak your device.")
         }
         
     }

@@ -11,7 +11,7 @@ import MachO
 struct Main: View {
     @ObservedObject var options = Settings.shared
     @Binding var isTabViewShown: Bool
-    @State private var showAlert = 
+    @State private var showAlert = false
     
     var body: some View {
         ZStack {

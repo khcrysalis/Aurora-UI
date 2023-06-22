@@ -51,7 +51,7 @@ struct Main: View {
                         VStack {
                             createButton(text: Validation.compatibilityCheck() ? "Jailbreak" : "Unsupported", action: {
 							  withAnimation {
-								isTabViewShown.toggle()
+								isTabViewShown = false
 							  }
                             }, isDisabled: { !Validation.isCompatible })
                         }

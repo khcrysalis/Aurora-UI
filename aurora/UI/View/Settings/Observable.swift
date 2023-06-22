@@ -12,7 +12,7 @@ class Settings: ObservableObject {
     @AppStorage("isRestoreRootfsEnabled") var isRestoreRootfsEnabled = false
     @AppStorage("isTweaksEnabled") var isTweaksEnabled = true
     @AppStorage("isLogsEnabled") var isLogsEnabled = false
-    @AppStorage("selectedTheme") var selectedTheme = "Flower"
+    @AppStorage("selectedTheme") var selectedTheme = "Aurora"
     @AppStorage("selectedImage") var selectedThemeImage = "milad-fakurian-u8Jn2rzYIps-unsplash"
     
     static let shared = Settings()

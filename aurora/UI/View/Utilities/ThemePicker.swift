@@ -9,8 +9,10 @@ import Foundation
 
 struct Theme: Identifiable, Hashable {
     static let appThemes = [
-        Theme(name: "Flower", image: "milad-fakurian-u8Jn2rzYIps-unsplash"),
-        Theme(name: "Nebula", image: "magicpattern-65O4Dw6-xLg-unsplash")
+        Theme(name: "Aurora", image: "milad-fakurian-u8Jn2rzYIps-unsplash"),
+        Theme(name: "Azure", image: "magicpattern-65O4Dw6-xLg-unsplash"),
+        Theme(name: "Borealis", image: "northern-lights"),
+        Theme(name: "Scarlet", image: "northern-lights-red")
     ]
     
     var name: String

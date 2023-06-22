@@ -33,7 +33,7 @@ struct ContentView: View {
                 
                 ZStack {
                     if selectedTab != .main {
-                        Blur(style: .systemUltraThinMaterialDark)
+                        Blur(style: .systemChromeMaterialDark)
                             .ignoresSafeArea()
                             .opacity(blurOpacity)
                     }

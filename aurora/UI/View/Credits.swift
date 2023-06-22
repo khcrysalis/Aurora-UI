@@ -8,6 +8,10 @@
 import SwiftUI
 import URLImage
 
+let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String
+
 struct Credits: View {
     
     @State private var showAlert = false
@@ -15,51 +19,52 @@ struct Credits: View {
     var body: some View {
         ZStack {
             VStack {
-                Spacer()
                 VStack {
-                    Section(header:
-                        CustomSectionHeader(title: "Credits & Contributors")
-                    ) {
-                        Button(action: {
-                            showAlert = true
-                        }) {
-                            HStack {
-                                Text("More credits can be found here")
-                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
-                                    .font(.subheadline)
-                                Image(systemName: "chevron.right")
-                                    .resizable()
-                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
-                                    .font(Font.body.weight(.heavy))
-                                    .frame(width: 5, height: 9)
-
-
-                            }
-                            .padding(.bottom, 10)
-                        }
-                        .alert(isPresented: $showAlert) {
-                            Alert(
-                                title: Text("Some title for later"),
-                                message: Text("Some message for later"),
-                                dismissButton: .default(Text("OK"))
-                            )
-                        }
-                        
-                        VStack {
+                    
+                    ScrollView(showsIndicators: false) {
+                        Spacer()
+                            .frame(height: 120)
+                        Section(header:
+                                    CustomSectionHeader(title: "Credits & Contributors")
+                        ) {
                             createButtonWithImage(imageURL: URL(string: "https://github.com/mineek.png")!, buttonText: "mineek", subtext: "Developer", linkURL: URL(string: "https://github.com/mineek")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/samiiau.png")!, buttonText: "samiiau", subtext: "UI & Design", linkURL: URL(string: "https://github.com/samiiau")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/llsc12.png")!, buttonText: "Lakhan Lothiyi", subtext: "UI & App help", linkURL: URL(string: "https://github.com/llsc12")!)
+                            createButtonWithImage(imageURL: URL(string: "https://github.com/staturnzz.png")!, buttonText: "Staturnz", subtext: "App help", linkURL: URL(string: "https://github.com/staturnzz")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/potmdehex.png")!, buttonText: "John Aakerblom", subtext: "Multicast Bytecopy Backport", linkURL: URL(string: "https://twitter.com/potmdehex")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/opa334.png")!, buttonText: "opa334", subtext: "Dopamine jailbreakd", linkURL: URL(string: "https://twitter.com/opa334dev")!)
                         }
+                        Section(header:
+                                    CustomSectionHeader(title: "Licensing")
+                        ) {
+                            createLButton(text: "SwiftUIBackports", subtext: "MIT License", action: {print("URLIMAGE Reboot tapped")}, infoaction: {print("balls")})
+                            createLButton(text: "AlertToast", subtext: "MIT License", action: {print("URLIMAGE Reboot tapped")}, infoaction: {print("balls")})
+                            createLButton(text: "URLImage", subtext: "MIT License", action: {print("URLIMAGE Reboot tapped")}, infoaction: {print("balls")})
+                        }
+                        Section(header:
+                                    CustomSectionHeader(title: "About")
+                        ) {
+                            Text(LocalizedStringKey("\(appName ?? "") \(appVersion ?? "") (Build: \(appBuild ?? ""))"))
+                                .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                .font(.headline)
+                            Text("Sample Text")
+                                .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                .font(.subheadline)
+                        }
+                        Spacer()
+                            .frame(height: 120)
                     }
+                    .mask(LinearGradient(gradient: Gradient(colors: [.black, .black, .black, .black, .clear]), startPoint: .bottom, endPoint: .top))
+                    .mask(LinearGradient(gradient: Gradient(colors: [.black, .black, .black, .black, .clear]), startPoint: .top, endPoint: .bottom))
                 }
                 .shadow(color: Color.black.opacity(0.1), radius: 10)
                 .padding(.vertical, 10)
                 .padding(.bottom, 30)
             }
             .padding()
+            
         }
+        
         .animation(.easeInOut)
     }
 }

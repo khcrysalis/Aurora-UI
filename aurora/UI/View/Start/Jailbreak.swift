@@ -23,14 +23,6 @@ struct Jailbreak: View {
                 Reboot()
                     .transition(.opacity)
             } else {
-                
-                VStack {
-                    VariableBlurView()
-                        .frame(height: 600)
-                        .allowsHitTesting(false)
-                        .ignoresSafeArea()
-                    Spacer()
-                }
                 VStack {
                     HStack {
                         Image(systemName: "house.fill")

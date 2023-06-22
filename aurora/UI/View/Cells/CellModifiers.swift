@@ -101,25 +101,31 @@ func createButton(text: String, action: @escaping () -> Void, isDisabled: @escap
     .disabled(isDisabled())
 }
 
-struct CheckmarkView: View {
-    var title: String
-    var isSelected: Bool
-    var action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                
-                Text(title)
+func createLButton(text: String, subtext: String, action: @escaping () -> Void, infoaction: @escaping () -> Void) -> some View {
+    return Button(action: action) {
+        HStack {
+            VStack {
+                Text(text)
                     .foregroundColor(Color(UIColor.label))
-                
-                Spacer()
-                
-                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .resizable()
-                    .foregroundColor(isSelected ? .blue : .gray)
-                    .frame(width: 28, height: 28)
+                Text(subtext)
+                    .foregroundColor(Color(UIColor.secondaryLabel))
             }
+            Spacer()
+            Image(systemName: "info.circle")
+                .foregroundColor(Color(UIColor.secondaryLabel))
+                .font(Font.body.weight(.semibold))
+                .onTapGesture {
+                    infoaction()
+                }
+            Image(systemName: "arrow.up.right")
+                .foregroundColor(Color(UIColor.secondaryLabel))
+                .font(Font.body.weight(.semibold))
         }
+        .padding()
+        .background(Blur(style: .systemThinMaterial))
+        .foregroundColor(.white)
+        .cornerRadius(26)
+        .padding(.bottom, 5)
     }
 }
+

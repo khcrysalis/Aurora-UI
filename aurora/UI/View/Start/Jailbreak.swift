@@ -13,7 +13,6 @@ struct Jailbreak: View {
     @State private var shadowScale: CGFloat = 1.0
     @State private var showRebootView = false
     @State private var logDrawerOpen = false
-    @State private var progress: Float = 0.0
     
     @ObservedObject var console = Console.shared
     
@@ -35,42 +34,31 @@ struct Jailbreak: View {
                     }
                     
                     Spacer()
-                    VStack{
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(console.line3?.message ?? "")
-                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
-                                    .font(.footnote)
-                                    .padding(.leading, 20)
-                                Text(console.line2?.message ?? "")
-                                    .foregroundColor(Color(UIColor.label).opacity(0.7))
-                                    .font(.subheadline)
-                                    .padding(.leading, 20)
-                                Text(console.line1?.message ?? "")
-                                    .foregroundColor(Color(UIColor.label))
-                                    .font(.headline)
-                                    .padding(.leading, 20)
-                            }
-                            Spacer()
-                        }
-                        
-                        HStack {
+                    
+                    ScrollView(showsIndicators: false) {
+                        ScrollViewReader { scrollView in
                             VStack {
-                                HStack {
-                                    ProgressView(value: progress)
-                                        .progressViewStyle(LinearProgressViewStyle())
-                                        .padding(.horizontal)
+                                Spacer()
+                                
+                                ForEach(console.logs.reversed()) { log in
+                                    HStack {
+                                        VStack(alignment: .leading) {
+                                            Text(log.message)
+                                                .foregroundColor(Color(UIColor.label))
+                                                .font(.headline)
+                                                .padding(.leading, 20)
+                                        }
+                                        Spacer()
+                                    }
+                                    .padding(.vertical, 10)
                                 }
-                                .padding()
-                                .background(Blur(style: .systemThinMaterial))
-                                .foregroundColor(.white)
-                                .cornerRadius(26)
-                                .padding(.bottom, 5)
-                                .shadow(color: Color.black.opacity(0.1), radius: 10)
+                            }
+                            .onChange(of: console.logs) { _ in
+                                scrollView.scrollTo(console.logs.last?.id, anchor: .bottom)
                             }
                         }
-                        .padding(.vertical, 10)
                     }
+                    .mask(LinearGradient(gradient: Gradient(colors: [.black, .black, .clear]), startPoint: .bottom, endPoint: .top))
                     
                     HStack {
                         VStack {
@@ -125,12 +113,21 @@ struct Jailbreak: View {
     
     func launchExampleExploit() {
         console.log("Obtaining system privileges...")
-        console.log("Obtaining system privileges...")
-        console.log("Obtaining system privileges...")
-        //progress = 0.2
         sleep(1)
+        console.log("Exploiting...")
+        sleep(1)
+        console.log("Installing Strap...")
+        sleep(1)
+        console.log("Installing Strap...")
+        sleep(1)
+        console.log("Installing Strap...")
+        sleep(1)
+        console.log("Installing Strap...")
+        sleep(1)
+        console.log("Installing Strap...")
+        sleep(1)
+        
         console.log("Cleaning up...")
-        progress = 1.0
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 //                showRebootView = true
 //              }

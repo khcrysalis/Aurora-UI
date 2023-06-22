@@ -39,14 +39,4 @@ extension Console {
     var line1: Log? {
         logs.first
     }
-
-    var line2: Log? {
-        guard logs.count > 1 else { return nil }
-        return logs[1]
-    }
-
-    var line3: Log? {
-        guard logs.count > 2 else { return nil }
-        return logs[2]
-    }
 }

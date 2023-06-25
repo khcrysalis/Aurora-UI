@@ -37,9 +37,41 @@ struct Credits: View {
                         Section(header:
                                     CustomSectionHeader(title: "Licensing")
                         ) {
-                            createLButton(text: "SwiftUIBackports", subtext: "MIT License", action: {print("URLIMAGE Reboot tapped")}, infoaction: {print("balls")})
-                            createLButton(text: "AlertToast", subtext: "MIT License", action: {print("URLIMAGE Reboot tapped")}, infoaction: {print("balls")})
-                            createLButton(text: "URLImage", subtext: "MIT License", action: {print("URLIMAGE Reboot tapped")}, infoaction: {print("balls")})
+                            createLButton(text: "SwiftUIBackports", subtext: "MIT License", action: {
+                                if let url = URL(string: "https://github.com/shaps80/SwiftUIBackports") {
+                                    UIApplication.shared.open(url)
+                                }
+                                
+                            }, infoaction: {
+                                if let url = URL(string: "https://github.com/shaps80/SwiftUIBackports/blob/main/LICENSE.md") {
+                                    UIApplication.shared.open(url)
+                                }
+                                
+                            })
+                            createLButton(text: "AlertToast", subtext: "MIT License", action: {
+                                
+                                if let url = URL(string: "https://github.com/elai950/AlertToast") {
+                                    UIApplication.shared.open(url)
+                                }
+                                
+                            }, infoaction: {
+                                
+                                if let url = URL(string: "https://github.com/elai950/AlertToast/blob/master/LICENSE.md") {
+                                    UIApplication.shared.open(url)
+                                }
+                                
+                            })
+                            createLButton(text: "URLImage", subtext: "MIT License", action: {
+                                if let url = URL(string: "https://github.com/dmytro-anokhin/url-image") {
+                                    UIApplication.shared.open(url)
+                                }
+                                
+                            }, infoaction: {
+                                if let url = URL(string: "https://github.com/dmytro-anokhin/url-image/blob/main/LICENSE") {
+                                    UIApplication.shared.open(url)
+                                }
+                                
+                            })
                         }
                         Section(header:
                                     CustomSectionHeader(title: "About")

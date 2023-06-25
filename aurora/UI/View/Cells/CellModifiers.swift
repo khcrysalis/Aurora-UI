@@ -104,7 +104,7 @@ func createButton(text: String, action: @escaping () -> Void, isDisabled: @escap
 func createLButton(text: String, subtext: String, action: @escaping () -> Void, infoaction: @escaping () -> Void) -> some View {
     return Button(action: action) {
         HStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(text)
                     .foregroundColor(Color(UIColor.label))
                 Text(subtext)

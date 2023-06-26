@@ -49,11 +49,12 @@ struct Main: View {
                 HStack {
                     VStack {
                         VStack {
-                            createButton(text: Validation.compatibilityCheck() ? "Jailbreak" : "Unsupported", action: {
-							  withAnimation {
-								isTabViewShown = false
-							  }
-                            }, isDisabled: { !Validation.isCompatible })
+                            createButton(text: Validation.compatibilityCheck() ? (options.isRestoreRootfsEnabled ? "Restore Filesystem" : "Jailbreak") : "Unsupported", action: {
+                                withAnimation {
+                                    isTabViewShown = false
+                                }
+                            })
+
                         }
                         
                         VStack {

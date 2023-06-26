@@ -75,22 +75,18 @@ func createButtonWithImage(imageURL: URL, buttonText: String, subtext: String, l
     }
 }
 
-func createButton(text: String, action: @escaping () -> Void, isDisabled: @escaping () -> Bool) -> some View {
+func createButton(text: String, action: @escaping () -> Void) -> some View {
     return Button(action: action) {
         HStack {
             Spacer()
-            if isDisabled() {
-                Text(text)
-                    .foregroundColor(Color(UIColor.label).opacity(0.5))
-                Spacer()
-            } else {
                 Text(text)
                     .foregroundColor(Color(UIColor.label))
+                    .opacity(Validation.isCompatible ? 1 : 0.5)
                 Spacer()
                 Image(systemName: "chevron.right")
                     .foregroundColor(Color(UIColor.secondaryLabel))
                     .font(Font.body.weight(.semibold))
-            }
+                    .opacity(Validation.isCompatible ? 1 : 0.5)
         }
         .padding()
         .background(Blur(style: .systemThinMaterial))
@@ -98,7 +94,7 @@ func createButton(text: String, action: @escaping () -> Void, isDisabled: @escap
         .cornerRadius(26)
         .padding(.bottom, 5)
     }
-    .disabled(isDisabled())
+    .disabled(!isSimulator() && !Validation.isCompatible)
 }
 
 func createLButton(text: String, subtext: String, action: @escaping () -> Void, infoaction: @escaping () -> Void) -> some View {

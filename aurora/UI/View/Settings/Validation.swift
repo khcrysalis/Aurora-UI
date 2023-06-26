@@ -46,9 +46,9 @@ class Validation {
         let validPlatforms = ["iOS", "iPadOS"]
         
         // For UI Testing/Debugging
-        if (isDebugging() && debugBypass) {isCompatible = true; return true}
-        if (isSimulator() && simulatorBypass) {isCompatible = true; return true}
-        if (forceCompat) {isCompatible = true; return true}
+//        if (isDebugging() && debugBypass) {isCompatible = true; return true}
+//        if (isSimulator() && simulatorBypass) {isCompatible = true; return true}
+//        if (forceCompat) {isCompatible = true; return true}
 
         if (arch.isEmpty) {
             print("[-] Incompatible Architecture: \(arch)")

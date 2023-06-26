@@ -25,7 +25,7 @@ struct Credits: View {
                         Spacer()
                             .frame(height: 120)
                         Section(header:
-                                    CustomSectionHeader(title: "Credits & Contributors")
+                                    CustomSectionHeader(title: "Credits and Acknowledgements")
                         ) {
                             createButtonWithImage(imageURL: URL(string: "https://github.com/mineek.png")!, buttonText: "mineek", subtext: "Developer", linkURL: URL(string: "https://github.com/mineek")!)
                             createButtonWithImage(imageURL: URL(string: "https://github.com/samiiau.png")!, buttonText: "samiiau", subtext: "UI & Design", linkURL: URL(string: "https://github.com/samiiau")!)

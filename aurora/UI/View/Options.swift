@@ -77,15 +77,15 @@ struct Options: View {
                                 HStack {
                                     createButton(text: "Respring", action: {
                                         print("Respring tapped")
-                                    }, isDisabled: { !Validation.isCompatible })
+                                    })
                                     createButton(text: "UICache", action: {
                                         print("UICache tapped")
-                                    }, isDisabled: { !Validation.isCompatible })
+                                    })
                                 }
                                 HStack {
                                     createButton(text: "Userspace Reboot", action: {
                                         print("Userspace Reboot tapped")
-                                    }, isDisabled: { !Validation.isCompatible })
+                                    })
                                 }
                             }
                         }

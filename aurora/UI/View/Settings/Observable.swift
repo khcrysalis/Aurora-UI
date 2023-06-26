@@ -10,6 +10,7 @@ import MachO
 
 class Settings: ObservableObject {
     @AppStorage("isRestoreRootfsEnabled") var isRestoreRootfsEnabled = false
+    @AppStorage("Generator") var textFieldText = "0x1111111111111111"
     @AppStorage("isTweaksEnabled") var isTweaksEnabled = true
     @AppStorage("isLogsEnabled") var isLogsEnabled = false
     @AppStorage("selectedTheme") var selectedTheme = "Aurora"

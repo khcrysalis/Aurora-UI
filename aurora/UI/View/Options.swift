@@ -36,6 +36,7 @@ struct Options: View {
                             .padding(.leading, 10)
                         
                         
+                        
                         Button(action: {
                             let regex = try! NSRegularExpression(pattern: "^0x[a-fA-F0-9]{16}$")
                             let range = NSRange(location: 0, length: textFieldInput.utf16.count)
@@ -49,6 +50,7 @@ struct Options: View {
                                 showToast = true
                                 isShowingInvalidToast = true
                             }
+                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                         }) {
                             Image(systemName: "wand.and.stars.inverse")
                                 .resizable()
@@ -71,6 +73,7 @@ struct Options: View {
                         Button {
                             options.selectedTheme = theme.name
                             options.selectedThemeImage = theme.image
+                            
                         } label: {
                             HStack {
                                 Text(theme.name)
@@ -112,4 +115,5 @@ struct Options: View {
             )
         }
     }
+    
 }

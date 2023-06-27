@@ -30,6 +30,7 @@ struct Options: View {
                                 Spacer()
                                 if options.selectedTheme == theme.name {
                                     Image(systemName: "checkmark.circle.fill")
+                                        .padding(.trailing, 10)
                                 }
                             }
                         }
@@ -73,7 +74,7 @@ struct Options: View {
                                 isShowingInvalidToast = true
                             }
                         }) {
-                            Image(systemName: "pencil")
+                            Image(systemName: "wand.and.stars.inverse")
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color(UIColor.label))
@@ -85,22 +86,6 @@ struct Options: View {
                 .background(Blur(style: .systemThinMaterial))
                 .cornerRadius(26)
                 .padding(.bottom, 5)
-            }
-            
-            Section(header: CustomSectionHeader(title: "Utilities")) {
-                VStack(spacing: 10) {
-                    HStack {
-                        createButton(text: "Respring", action: {
-                            print("Respring tapped")
-                        })
-                        createButton(text: "UICache", action: {
-                            print("UICache tapped")
-                        })
-                    }
-                    createButton(text: "Userspace Reboot", action: {
-                        print("Userspace Reboot tapped")
-                    })
-                }
             }
             
         }

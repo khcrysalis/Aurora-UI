@@ -14,11 +14,15 @@ struct CustomSectionHeader: View {
     var title: String
     
     var body: some View {
-        Text(title)
-            .font(.bold(.headline)())
-            .foregroundColor(Color(UIColor.label))
-            .textCase(.none)
-            .padding(.bottom, 5)
+        HStack {
+            Text(title)
+                .font(.bold(.headline)())
+                .foregroundColor(Color(UIColor.label))
+                .textCase(.none)
+                .padding(.bottom, 5)
+                .padding(.leading, 25)
+            Spacer()
+        }
     }
 }
 

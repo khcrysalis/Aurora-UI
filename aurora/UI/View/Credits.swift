@@ -9,7 +9,6 @@ import SwiftUI
 import URLImage
 
 let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
 let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String
 
 struct Credits: View {
@@ -51,21 +50,41 @@ struct Credits: View {
                 }
                 
                 Section(header: CustomSectionHeader(title: "About")) {
-                    HStack {
-                        Image(systemName: "house.fill")
-                            .resizable()
-                            .frame(width: 37, height: 32)
-                            .foregroundColor(.white.opacity(0.2))
-                            .shadow(color: Color.black.opacity(0.1), radius: 10)
-                        VStack(alignment: .leading) {
-                            Text(LocalizedStringKey("\(appName ?? "")"))
-                                .foregroundColor(Color(UIColor.label).opacity(0.4))
-                                .font(.subheadline)
-                            Text(LocalizedStringKey("\(appVersion ?? "") (Build: \(appBuild ?? ""))"))
-                                .foregroundColor(Color(UIColor.label).opacity(0.4))
-                                .font(.subheadline)
+                    VStack (alignment: .leading) {
+                        Text(LocalizedStringKey("Made with 💜 by _ team\nUI inspired by Cheyote, a jailbreak that never came to be."))
+                            .foregroundColor(Color(UIColor.label).opacity(0.4))
+                            .font(.subheadline)
+                        Divider()
+                        HStack {
+                            Image(systemName: "house.fill")
+                                .resizable()
+                                .frame(width: 37, height: 32)
+                                .foregroundColor(.white.opacity(0.2))
+                                .shadow(color: Color.black.opacity(0.1), radius: 10)
+                            VStack(alignment: .leading) {
+                                
+//                                Text(LocalizedStringKey("\(appName ?? "") "))
+//                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+//                                    .font(.subheadline)
+//                                    .bold() +
+//                                Text("jailbreak")
+//                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+//                                    .font(.subheadline)
+                                
+                                Text(LocalizedStringKey("\(appName ?? "") "))
+                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .font(.subheadline)
+                                    .bold() +
+                                Text("build \(appVersion ?? "")")
+                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .font(.subheadline)
+                                
+                                Text("for iOS 14.6 - 14.8")
+                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .font(.subheadline)
+                            }
+                            Spacer()
                         }
-                        Spacer()
                     }
                     .padding(.horizontal)
                 }

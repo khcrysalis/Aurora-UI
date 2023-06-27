@@ -16,7 +16,6 @@
 		3338240C2A3C53FC00DECEA8 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3338240B2A3C53FC00DECEA8 /* Options.swift */; };
 		333824112A3C6BA300DECEA8 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824102A3C6BA300DECEA8 /* Credits.swift */; };
 		333824132A3C73B100DECEA8 /* CellModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824122A3C73B100DECEA8 /* CellModifiers.swift */; };
-		333824162A3C7A9A00DECEA8 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 333824152A3C7A9A00DECEA8 /* URLImage */; };
 		3338241B2A3C96BA00DECEA8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3338241A2A3C96BA00DECEA8 /* Observable.swift */; };
 		3338241E2A3D15DD00DECEA8 /* Jailbreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3338241D2A3D15DD00DECEA8 /* Jailbreak.swift */; };
 		333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824332A3D4E8100DECEA8 /* Reboot.swift */; };
@@ -24,6 +23,8 @@
 		336F0C422A3E813500226184 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F0C412A3E813500226184 /* Logging.swift */; };
 		33A4819D2A3F18810048FE22 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4819C2A3F18810048FE22 /* Background.swift */; };
 		33D954722A4A72F300429300 /* LookinServer in Frameworks */ = {isa = PBXBuildFile; productRef = 33D954712A4A72F300429300 /* LookinServer */; };
+		33D954792A4ADD2300429300 /* Funny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D954782A4ADD2300429300 /* Funny.swift */; };
+		33D9547C2A4AE2B800429300 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 33D9547B2A4AE2B800429300 /* SDWebImageSwiftUI */; };
 		33F98EA02A413F3F001B1A27 /* Banners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F98E9F2A413F3F001B1A27 /* Banners.swift */; };
 		AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */ = {isa = PBXBuildFile; productRef = AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */; };
 		AAD2FA372A3DBB2E008D8AF1 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA362A3DBB2E008D8AF1 /* ThemePicker.swift */; };
@@ -48,6 +49,7 @@
 		336F0C412A3E813500226184 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		33A4819C2A3F18810048FE22 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		33D954762A4A959600429300 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33D954782A4ADD2300429300 /* Funny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funny.swift; sourceTree = "<group>"; };
 		33F98E9F2A413F3F001B1A27 /* Banners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banners.swift; sourceTree = "<group>"; };
 		AAD2FA362A3DBB2E008D8AF1 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		AAD2FA4E2A3E8AC2008D8AF1 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
@@ -58,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				333824162A3C7A9A00DECEA8 /* URLImage in Frameworks */,
+				33D9547C2A4AE2B800429300 /* SDWebImageSwiftUI in Frameworks */,
 				33D954722A4A72F300429300 /* LookinServer in Frameworks */,
 				AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */,
 			);
@@ -153,6 +155,7 @@
 			children = (
 				AAD2FA362A3DBB2E008D8AF1 /* ThemePicker.swift */,
 				2F60E6D42A40AE54004B9838 /* DeviceInfo.swift */,
+				33D954782A4ADD2300429300 /* Funny.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -174,9 +177,9 @@
 			);
 			name = Aurora;
 			packageProductDependencies = (
-				333824152A3C7A9A00DECEA8 /* URLImage */,
 				AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */,
 				33D954712A4A72F300429300 /* LookinServer */,
+				33D9547B2A4AE2B800429300 /* SDWebImageSwiftUI */,
 			);
 			productName = rambutan;
 			productReference = 333823D82A3C282E00DECEA8 /* Aurora.app */;
@@ -207,9 +210,9 @@
 			);
 			mainGroup = 333823CF2A3C282E00DECEA8;
 			packageReferences = (
-				333824142A3C7A9A00DECEA8 /* XCRemoteSwiftPackageReference "url-image" */,
 				AAAF1B042A3E944900FBEBAF /* XCRemoteSwiftPackageReference "SwiftUIBackports" */,
 				33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */,
+				33D9547A2A4AE2B800429300 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 333823D92A3C282E00DECEA8 /* Products */;
 			projectDirPath = "";
@@ -238,6 +241,7 @@
 			files = (
 				333824072A3C2A3B00DECEA8 /* Main.swift in Sources */,
 				336F0C422A3E813500226184 /* Logging.swift in Sources */,
+				33D954792A4ADD2300429300 /* Funny.swift in Sources */,
 				33A4819D2A3F18810048FE22 /* Background.swift in Sources */,
 				3338241E2A3D15DD00DECEA8 /* Jailbreak.swift in Sources */,
 				333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */,
@@ -471,20 +475,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		333824142A3C7A9A00DECEA8 /* XCRemoteSwiftPackageReference "url-image" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/QMUI/LookinServer/";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		33D9547A2A4AE2B800429300 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		AAAF1B042A3E944900FBEBAF /* XCRemoteSwiftPackageReference "SwiftUIBackports" */ = {
@@ -498,15 +502,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		333824152A3C7A9A00DECEA8 /* URLImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 333824142A3C7A9A00DECEA8 /* XCRemoteSwiftPackageReference "url-image" */;
-			productName = URLImage;
-		};
 		33D954712A4A72F300429300 /* LookinServer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */;
 			productName = LookinServer;
+		};
+		33D9547B2A4AE2B800429300 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33D9547A2A4AE2B800429300 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */ = {
 			isa = XCSwiftPackageProductDependency;

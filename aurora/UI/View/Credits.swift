@@ -13,7 +13,7 @@ let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String
 
 struct Credits: View {
     @State private var showAlert = false
-    
+    let dayString = qOTD()
     var body: some View {
         VStack(spacing: 10) {
             ScrollView(showsIndicators: false) {
@@ -42,10 +42,10 @@ struct Credits: View {
                         openURL("https://github.com/elai950/AlertToast/blob/master/LICENSE.md")
                     })
                     
-                    createLButton(text: "URLImage", subtext: "MIT License", action: {
-                        openURL("https://github.com/dmytro-anokhin/url-image")
+                    createLButton(text: "SDWebImageSwiftUI", subtext: "MIT License", action: {
+                        openURL("https://github.com/SDWebImage/SDWebImageSwiftUI")
                     }, infoaction: {
-                        openURL("https://github.com/dmytro-anokhin/url-image/blob/main/LICENSE")
+                        openURL("https://github.com/SDWebImage/SDWebImageSwiftUI/blob/master/LICENSE")
                     })
                 }
                 
@@ -93,9 +93,25 @@ struct Credits: View {
                                 .font(.subheadline)
                         }
                         Divider()
-                        Text(LocalizedStringKey("Made with 💜 by palera1n team"))
-                            .foregroundColor(.white.opacity(0.4))
-                            .font(.subheadline)
+                        HStack {
+                            Text(LocalizedStringKey("Made with 💜 by palera1n team"))
+                                .foregroundColor(.white.opacity(0.4))
+                                .font(.subheadline)
+                            Spacer()
+                            Button(action: {
+                                showAlert = true
+                            }) {
+                                Image(systemName: "text.bubble")
+                                    .foregroundColor(.white.opacity(0.4))
+                            }
+                            .alert(isPresented: $showAlert) {
+                                Alert(
+                                    title: Text(""),
+                                    message: Text("\(dayString)"),
+                                    dismissButton: .default(Text("OK"))
+                                )
+                            }
+                        }
                     }
                     .padding(.horizontal)
                 }

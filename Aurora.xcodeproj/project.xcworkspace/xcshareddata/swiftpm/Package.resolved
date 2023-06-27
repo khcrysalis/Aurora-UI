@@ -10,6 +10,24 @@
       }
     },
     {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "c51ba84499268ea3020e6aee9e229c0f56b9d924",
+        "version" : "5.16.0"
+      }
+    },
+    {
+      "identity" : "sdwebimageswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImageSwiftUI",
+      "state" : {
+        "revision" : "e837c37d45449fbd3b4745c10c5b5274e73edead",
+        "version" : "2.2.3"
+      }
+    },
+    {
       "identity" : "swiftbackports",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/shaps80/SwiftBackports",
@@ -25,15 +43,6 @@
       "state" : {
         "revision" : "3042f0cf4b9f0d5b0bb08ad17f742a43bc4fdfc5",
         "version" : "2.8.0"
-      }
-    },
-    {
-      "identity" : "url-image",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/dmytro-anokhin/url-image",
-      "state" : {
-        "revision" : "4042f955f1fdff00ced85545e1eecdbf969b5cd0",
-        "version" : "3.1.1"
       }
     }
   ],

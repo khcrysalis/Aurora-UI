@@ -7,8 +7,7 @@
 
 import Foundation
 import SwiftUI
-import URLImage
-
+import SDWebImageSwiftUI
 
 struct CustomSectionHeader: View {
     var title: String
@@ -44,14 +43,15 @@ func createButtonWithImage(imageURL: URL, buttonText: String, subtext: String, l
             UIApplication.shared.open(linkURL)
         }) {
             HStack {
-                URLImage(imageURL) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 47, height: 47)
-                        .clipShape(RoundedRectangle(cornerRadius: 14))
-                }
-                .padding(.trailing, 5)
+                WebImage(url: imageURL)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 47, height: 47)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .padding(.trailing, 5)
+                    .transition(.fade(duration: 0.3))
+                
+                
                 VStack(alignment: .leading) {
                     Text(buttonText)
                         .font(.title3)
@@ -64,6 +64,7 @@ func createButtonWithImage(imageURL: URL, buttonText: String, subtext: String, l
                         .foregroundColor(Color(UIColor.secondaryLabel))
                         .alignmentGuide(.leading) { _ in 0 }
                 }
+                
                 Spacer()
                 
                 Image(systemName: "chevron.right")

@@ -51,13 +51,23 @@ struct Credits: View {
                 }
                 
                 Section(header: CustomSectionHeader(title: "About")) {
-                    Text(LocalizedStringKey("\(appName ?? "") \(appVersion ?? "") (Build: \(appBuild ?? ""))"))
-                        .foregroundColor(Color(UIColor.label).opacity(0.4))
-                        .font(.headline)
-                    
-                    Text("Sample Text")
-                        .foregroundColor(Color(UIColor.label).opacity(0.4))
-                        .font(.subheadline)
+                    HStack {
+                        Image(systemName: "house.fill")
+                            .resizable()
+                            .frame(width: 37, height: 32)
+                            .foregroundColor(.white.opacity(0.2))
+                            .shadow(color: Color.black.opacity(0.1), radius: 10)
+                        VStack(alignment: .leading) {
+                            Text(LocalizedStringKey("\(appName ?? "")"))
+                                .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                .font(.subheadline)
+                            Text(LocalizedStringKey("\(appVersion ?? "") (Build: \(appBuild ?? ""))"))
+                                .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                .font(.subheadline)
+                        }
+                        Spacer()
+                    }
+                    .padding(.horizontal)
                 }
                 
                 Spacer()

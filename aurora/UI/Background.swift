@@ -18,11 +18,10 @@ struct Background: View {
                     createImage(geometry)
                 }
                 
-                Blur(style: .systemChromeMaterialDark)
-                    .edgesIgnoringSafeArea(.all)
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
+        
     }
     
     private func createImage(_ geometry: GeometryProxy) -> some View {

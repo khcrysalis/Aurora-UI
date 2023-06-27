@@ -55,7 +55,11 @@ struct ContentView: View {
         }
         .animation(.easeOut(duration: 0.4))
         .background(
-            Background().animation(.easeInOut(duration: 3.0))
+            ZStack {
+                Background().animation(.easeInOut(duration: 3.0))
+                Blur(style: .systemChromeMaterialDark)
+                    .edgesIgnoringSafeArea(.all)
+            }
         )
         .ignoresSafeArea(.keyboard)
     }

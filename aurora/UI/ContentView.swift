@@ -36,13 +36,13 @@ struct ContentView: View {
                     if isTabViewShown {
                         TabView(selection: $selectedTab) {
                             Options()
-                                .frame(width: UIScreen.main.bounds.width)
                                 .tag(Tabs.options)
+                                .frame(maxWidth: 375)
                             Main(isTabViewShown: $isTabViewShown)
-                                .frame(width: UIScreen.main.bounds.width)
+                                .frame(maxWidth: 375)
                                 .tag(Tabs.main)
                             Credits()
-                                .frame(width: UIScreen.main.bounds.width)
+                                .frame(maxWidth: 375)
                                 .tag(Tabs.credits)
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))

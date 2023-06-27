@@ -60,6 +60,8 @@ struct ContentView: View {
         }
         .animation(.easeOut(duration: 0.4))
         .background(Background().animation(.easeInOut(duration: 3.0)))
+        .ignoresSafeArea(.keyboard)
+
     }
     
     enum Tabs {

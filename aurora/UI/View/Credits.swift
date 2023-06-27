@@ -51,10 +51,6 @@ struct Credits: View {
                 
                 Section(header: CustomSectionHeader(title: "About")) {
                     VStack (alignment: .leading) {
-                        Text(LocalizedStringKey("Made with 💜 by _ team\nUI inspired by Cheyote, a jailbreak that never came to be."))
-                            .foregroundColor(Color(UIColor.label).opacity(0.4))
-                            .font(.subheadline)
-                        Divider()
                         HStack {
                             Image(systemName: "house.fill")
                                 .resizable()
@@ -64,27 +60,42 @@ struct Credits: View {
                             VStack(alignment: .leading) {
                                 
 //                                Text(LocalizedStringKey("\(appName ?? "") "))
-//                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+//                                    .foregroundColor(.white.opacity(0.4))
 //                                    .font(.subheadline)
 //                                    .bold() +
 //                                Text("jailbreak")
-//                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+//                                    .foregroundColor(.white.opacity(0.4))
 //                                    .font(.subheadline)
                                 
                                 Text(LocalizedStringKey("\(appName ?? "") "))
-                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .foregroundColor(.white.opacity(0.4))
                                     .font(.subheadline)
                                     .bold() +
                                 Text("build \(appVersion ?? "")")
-                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .foregroundColor(.white.opacity(0.4))
                                     .font(.subheadline)
                                 
                                 Text("for iOS 14.6 - 14.8")
-                                    .foregroundColor(Color(UIColor.label).opacity(0.4))
+                                    .foregroundColor(.white.opacity(0.4))
                                     .font(.subheadline)
                             }
                             Spacer()
                         }
+                        Divider()
+                        HStack {
+                            Image("Cheyote")
+                                .resizable()
+                                .frame(width: 32, height: 32)
+                                .opacity(0.2)
+                                .shadow(color: Color.black.opacity(0.1), radius: 10)
+                            Text(LocalizedStringKey("UI inspired by Cheyote, a jailbreak that never came to be."))
+                                .foregroundColor(.white.opacity(0.4))
+                                .font(.subheadline)
+                        }
+                        Divider()
+                        Text(LocalizedStringKey("Made with 💜 by _ team"))
+                            .foregroundColor(.white.opacity(0.4))
+                            .font(.subheadline)
                     }
                     .padding(.horizontal)
                 }

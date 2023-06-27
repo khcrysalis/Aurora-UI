@@ -27,6 +27,7 @@ struct Main: View {
             Spacer()
             
             Button(action: {
+                f.notificationOccurred(.success)
                 showAlert = true
             }) {
                 HStack {

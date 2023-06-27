@@ -14,6 +14,7 @@ let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String
 struct Credits: View {
     @State private var showAlert = false
     let dayString = qOTD()
+    let f = UINotificationFeedbackGenerator()
     var body: some View {
         VStack(spacing: 10) {
             ScrollView(showsIndicators: false) {
@@ -91,6 +92,7 @@ struct Credits: View {
                                 .font(.subheadline)
                             Spacer()
                             Button(action: {
+                                f.notificationOccurred(.success)
                                 showAlert = true
                             }) {
                                 Image(systemName: "text.bubble")
@@ -118,6 +120,7 @@ struct Credits: View {
         .shadow(color: Color.black.opacity(0.1), radius: 10)
     }
     private func openURL(_ urlString: String) {
+        f.notificationOccurred(.success)
         if let url = URL(string: urlString) {
             UIApplication.shared.open(url)
         }

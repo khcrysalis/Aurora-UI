@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import SDWebImageSwiftUI
-
+let f = UINotificationFeedbackGenerator()
 struct CustomSectionHeader: View {
     var title: String
     
@@ -40,6 +40,7 @@ struct JailbreakSectionHeader: View {
 func createButtonWithImage(imageURL: URL, buttonText: String, subtext: String, linkURL: URL) -> some View {
     return VStack {
         Button(action: {
+            f.notificationOccurred(.success)
             UIApplication.shared.open(linkURL)
         }) {
             HStack {

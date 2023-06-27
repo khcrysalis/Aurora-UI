@@ -93,7 +93,7 @@ struct Credits: View {
                                 .font(.subheadline)
                         }
                         Divider()
-                        Text(LocalizedStringKey("Made with 💜 by _ team"))
+                        Text(LocalizedStringKey("Made with 💜 by palera1n team"))
                             .foregroundColor(.white.opacity(0.4))
                             .font(.subheadline)
                     }

@@ -44,6 +44,21 @@ struct Main: View {
                 )
             }
             .padding()
+            Section() {
+                VStack(spacing: 10) {
+                    Toggle("Tweaks", isOn: $options.isTweaksEnabled)
+                        .foregroundColor(Color(UIColor.label))
+                        .padding(.horizontal, 10)
+                    Divider()
+                    Toggle("Restore RootFS", isOn: $options.isRestoreRootfsEnabled)
+                        .foregroundColor(Color(UIColor.label))
+                        .padding(.horizontal, 10)
+                }
+                .padding()
+                .background(Blur(style: .systemThinMaterial))
+                .cornerRadius(26)
+                .padding(.bottom, 5)
+            }
             
             createButton(text: Validation.compatibilityCheck() ? (options.isRestoreRootfsEnabled ? "Restore Filesystem" : "Jailbreak") : "Unsupported", action: {
                 withAnimation {
@@ -51,24 +66,9 @@ struct Main: View {
                 }
             })
             
-            VStack {
-                Toggle("Tweaks", isOn: $options.isTweaksEnabled)
-                    .foregroundColor(Color(UIColor.label))
-                    .padding(.horizontal, 10)
-                Divider()
-                Toggle("Restore RootFS", isOn: $options.isRestoreRootfsEnabled)
-                    .foregroundColor(Color(UIColor.label))
-                    .padding(.horizontal, 10)
-            }
-            .padding()
-            .background(Blur(style: .systemThinMaterial))
-            .cornerRadius(26)
-            .padding(.bottom, 5)
-            
         }
         .padding()
         .padding(.bottom, 30)
-        .shadow(color: Color.black.opacity(0.1), radius: 10)
         .transition(.opacity)
         .toast(isPresenting: $showToast) {
             AlertToast(displayMode: .banner(.pop), type: .systemImage("exclamationmark.triangle.fill", Color(UIColor.label).opacity(0.4)), title: "AORAInteractor is in Demo Mode", subTitle: "This will not actually jailbreak your device.")

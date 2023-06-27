@@ -52,7 +52,7 @@ struct Options: View {
                 VStack(spacing: 10) {
                         Toggle("Show More Logs", isOn: $options.isLogsEnabled)
                             .foregroundColor(Color(UIColor.label))
-                            .padding(.leading, 10)
+                            .padding(.horizontal, 10)
                     Divider()
                     HStack {
                         TextField("0x3bc2b1fbd8d0f821", text: $textFieldInput)

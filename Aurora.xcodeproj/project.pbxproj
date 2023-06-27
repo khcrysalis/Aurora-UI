@@ -24,6 +24,7 @@
 		333824432A3E715900DECEA8 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824422A3E715900DECEA8 /* Validation.swift */; };
 		336F0C422A3E813500226184 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F0C412A3E813500226184 /* Logging.swift */; };
 		33A4819D2A3F18810048FE22 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4819C2A3F18810048FE22 /* Background.swift */; };
+		33D954722A4A72F300429300 /* LookinServer in Frameworks */ = {isa = PBXBuildFile; productRef = 33D954712A4A72F300429300 /* LookinServer */; };
 		33F98EA02A413F3F001B1A27 /* Banners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F98E9F2A413F3F001B1A27 /* Banners.swift */; };
 		AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */ = {isa = PBXBuildFile; productRef = AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */; };
 		AAD2FA372A3DBB2E008D8AF1 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2FA362A3DBB2E008D8AF1 /* ThemePicker.swift */; };
@@ -59,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				333824162A3C7A9A00DECEA8 /* URLImage in Frameworks */,
+				33D954722A4A72F300429300 /* LookinServer in Frameworks */,
 				AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +177,7 @@
 			packageProductDependencies = (
 				333824152A3C7A9A00DECEA8 /* URLImage */,
 				AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */,
+				33D954712A4A72F300429300 /* LookinServer */,
 			);
 			productName = rambutan;
 			productReference = 333823D82A3C282E00DECEA8 /* Aurora.app */;
@@ -207,6 +210,7 @@
 			packageReferences = (
 				333824142A3C7A9A00DECEA8 /* XCRemoteSwiftPackageReference "url-image" */,
 				AAAF1B042A3E944900FBEBAF /* XCRemoteSwiftPackageReference "SwiftUIBackports" */,
+				33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */,
 			);
 			productRefGroup = 333823D92A3C282E00DECEA8 /* Products */;
 			projectDirPath = "";
@@ -471,6 +475,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QMUI/LookinServer/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		AAAF1B042A3E944900FBEBAF /* XCRemoteSwiftPackageReference "SwiftUIBackports" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shaps80/SwiftUIBackports";
@@ -486,6 +498,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 333824142A3C7A9A00DECEA8 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
+		};
+		33D954712A4A72F300429300 /* LookinServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */;
+			productName = LookinServer;
 		};
 		AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -14,6 +14,8 @@ struct Main: View {
     @State private var showAlert = false
     @State private var showToast = false
     
+    let f = UINotificationFeedbackGenerator()
+    
     var body: some View {
         VStack(spacing: 10) {
             Image(systemName: "house.fill")
@@ -61,6 +63,7 @@ struct Main: View {
             }
             
             createButton(text: Validation.compatibilityCheck() ? (options.isRestoreRootfsEnabled ? "Restore Filesystem" : "Jailbreak") : "Unsupported", action: {
+                f.notificationOccurred(.success)
                 withAnimation {
                     isTabViewShown = false
                 }

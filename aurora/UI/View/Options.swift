@@ -26,6 +26,7 @@ struct Options: View {
                         } label: {
                             HStack {
                                 Text(theme.name)
+                                    .padding(.leading, 10)
                                 Spacer()
                                 if options.selectedTheme == theme.name {
                                     Image(systemName: "checkmark.circle.fill")

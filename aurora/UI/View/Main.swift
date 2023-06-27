@@ -12,6 +12,7 @@ struct Main: View {
     @ObservedObject var options = Settings.shared
     @Binding var isTabViewShown: Bool
     @State private var showAlert = false
+    @State private var showToast = false
     
     var body: some View {
         VStack(spacing: 10) {
@@ -69,6 +70,16 @@ struct Main: View {
         .padding(.bottom, 30)
         .shadow(color: Color.black.opacity(0.1), radius: 10)
         .transition(.opacity)
+        .toast(isPresenting: $showToast) {
+            AlertToast(displayMode: .banner(.pop), type: .systemImage("exclamationmark.triangle.fill", Color(UIColor.label).opacity(0.4)), title: "AORAInteractor is in Demo Mode", subTitle: "This will not actually jailbreak your device.")
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if isSimulator() {
+                    showToast = true
+                }
+            }
+        }
     }
 }
 

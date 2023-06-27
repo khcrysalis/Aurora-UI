@@ -15,13 +15,10 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            // Animated Background
             ZStack {
-                
                 Blur(style: .systemChromeMaterialDark)
                     .edgesIgnoringSafeArea(.all)
-                
-                // Other Views
+
                 if !isTabViewShown {
                     LinearGradient(colors: [Color.black], startPoint: .leading, endPoint: .trailing)
                         .ignoresSafeArea()
@@ -61,12 +58,18 @@ struct ContentView: View {
         .animation(.easeOut(duration: 0.4))
         .background(Background().animation(.easeInOut(duration: 3.0)))
         .ignoresSafeArea(.keyboard)
-
     }
     
     enum Tabs {
         case options
         case main
         case credits
+    }
+}
+
+extension View {
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
     }
 }

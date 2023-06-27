@@ -50,7 +50,7 @@ struct Options: View {
                                 showToast = true
                                 isShowingInvalidToast = true
                             }
-                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                            hideKeyboard()
                         }) {
                             Image(systemName: "wand.and.stars.inverse")
                                 .resizable()

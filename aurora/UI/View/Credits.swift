@@ -103,14 +103,7 @@ struct Credits: View {
                 Spacer()
                     .frame(height: 120)
             }
-            .mask(
-                LinearGradient(gradient: Gradient(colors: [.black, .black, .black, .black, .clear]), startPoint: .bottom, endPoint: .top)
-                    .padding(.vertical, 10)
-            )
-            .mask(
-                LinearGradient(gradient: Gradient(colors: [.black, .black, .black, .black, .clear]), startPoint: .top, endPoint: .bottom)
-                    .padding(.bottom, 30)
-            )
+            .applyLinearGradientMask()
         }
         .padding()
         .animation(.easeInOut)

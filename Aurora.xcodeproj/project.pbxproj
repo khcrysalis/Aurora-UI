@@ -87,9 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				33D954762A4A959600429300 /* Info.plist */,
+				333823DF2A3C283000DECEA8 /* Assets.xcassets */,
 				333823DB2A3C282E00DECEA8 /* auroraApp.swift */,
 				333824052A3C2A1900DECEA8 /* UI */,
-				333823DF2A3C283000DECEA8 /* Assets.xcassets */,
 			);
 			path = aurora;
 			sourceTree = "<group>";

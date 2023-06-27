@@ -19,7 +19,7 @@ struct Main: View {
             Image(systemName: "house.fill")
                 .resizable()
                 .frame(width: 37, height: 32)
-                .foregroundColor(Color(UIColor.label).opacity(0.2))
+                .foregroundColor(.white.opacity(0.2))
                 .shadow(color: Color.black.opacity(0.1), radius: 10)
             
             Spacer()
@@ -29,10 +29,10 @@ struct Main: View {
             }) {
                 HStack {
                     Image(systemName: "info.circle")
-                        .foregroundColor(Color(UIColor.label).opacity(0.4))
+                        .foregroundColor(.white.opacity(0.4))
                     
                     Text("\(DeviceInfo.current.machineName) running \(DeviceInfo.current.platformName) \(DeviceInfo.current.platformVer)")
-                        .foregroundColor(Color(UIColor.label).opacity(0.4))
+                        .foregroundColor(.white.opacity(0.4))
                         .font(.subheadline)
                 }
             }

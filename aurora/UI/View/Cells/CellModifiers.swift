@@ -17,7 +17,7 @@ struct CustomSectionHeader: View {
         HStack {
             Text(title)
                 .font(.bold(.headline)())
-                .foregroundColor(Color(UIColor.label))
+                .foregroundColor(.white)
                 .textCase(.none)
                 .padding(.bottom, 5)
                 .padding(.leading, 25)

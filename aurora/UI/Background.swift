@@ -17,6 +17,9 @@ struct Background: View {
                 ForEach(0..<3) { _ in
                     createImage(geometry)
                 }
+                
+                Blur(style: .systemChromeMaterialDark)
+                    .edgesIgnoringSafeArea(.all)
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }

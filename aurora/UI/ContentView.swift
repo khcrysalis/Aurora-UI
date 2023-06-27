@@ -16,8 +16,6 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             ZStack {
-                Blur(style: .systemChromeMaterialDark)
-                    .edgesIgnoringSafeArea(.all)
 
                 if !isTabViewShown {
                     LinearGradient(colors: [Color.black], startPoint: .leading, endPoint: .trailing)
@@ -56,7 +54,9 @@ struct ContentView: View {
             }
         }
         .animation(.easeOut(duration: 0.4))
-        .background(Background().animation(.easeInOut(duration: 3.0)))
+        .background(
+            Background().animation(.easeInOut(duration: 3.0))
+        )
         .ignoresSafeArea(.keyboard)
     }
     

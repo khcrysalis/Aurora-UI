@@ -54,18 +54,10 @@ struct Credits: View {
                         HStack {
                             Image(systemName: "house.fill")
                                 .resizable()
-                                .frame(width: 37, height: 32)
+                                .frame(width: 32, height: 32)
                                 .foregroundColor(.white.opacity(0.2))
                                 .shadow(color: Color.black.opacity(0.1), radius: 10)
                             VStack(alignment: .leading) {
-                                
-//                                Text(LocalizedStringKey("\(appName ?? "") "))
-//                                    .foregroundColor(.white.opacity(0.4))
-//                                    .font(.subheadline)
-//                                    .bold() +
-//                                Text("jailbreak")
-//                                    .foregroundColor(.white.opacity(0.4))
-//                                    .font(.subheadline)
                                 
                                 Text(LocalizedStringKey("\(appName ?? "") "))
                                     .foregroundColor(.white.opacity(0.4))
@@ -131,3 +123,10 @@ struct Credits: View {
         }
     }
 }
+//                                Text(LocalizedStringKey("\(appName ?? "") "))
+//                                    .foregroundColor(.white.opacity(0.4))
+//                                    .font(.subheadline)
+//                                    .bold() +
+//                                Text("jailbreak")
+//                                    .foregroundColor(.white.opacity(0.4))
+//                                    .font(.subheadline)

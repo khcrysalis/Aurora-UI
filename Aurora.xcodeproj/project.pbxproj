@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F60E6D52A40AE54004B9838 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60E6D42A40AE54004B9838 /* DeviceInfo.swift */; };
 		333823DC2A3C282E00DECEA8 /* auroraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333823DB2A3C282E00DECEA8 /* auroraApp.swift */; };
-		333823DE2A3C282E00DECEA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333823DD2A3C282E00DECEA8 /* ContentView.swift */; };
+		333823DE2A3C282E00DECEA8 /* AORAInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333823DD2A3C282E00DECEA8 /* AORAInteractor.swift */; };
 		333823E02A3C283000DECEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333823DF2A3C283000DECEA8 /* Assets.xcassets */; };
 		333824072A3C2A3B00DECEA8 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824062A3C2A3B00DECEA8 /* Main.swift */; };
 		3338240A2A3C38EA00DECEA8 /* Blurs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824092A3C38EA00DECEA8 /* Blurs.swift */; };
@@ -36,7 +36,7 @@
 		2F60E6D42A40AE54004B9838 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		333823D82A3C282E00DECEA8 /* Aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		333823DB2A3C282E00DECEA8 /* auroraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = auroraApp.swift; sourceTree = "<group>"; };
-		333823DD2A3C282E00DECEA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		333823DD2A3C282E00DECEA8 /* AORAInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AORAInteractor.swift; sourceTree = "<group>"; };
 		333823DF2A3C283000DECEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		333824062A3C2A3B00DECEA8 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		333824092A3C38EA00DECEA8 /* Blurs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blurs.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		333824052A3C2A1900DECEA8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				333823DD2A3C282E00DECEA8 /* ContentView.swift */,
+				333823DD2A3C282E00DECEA8 /* AORAInteractor.swift */,
 				33A4819C2A3F18810048FE22 /* Background.swift */,
 				333824082A3C2A4000DECEA8 /* View */,
 			);
@@ -250,7 +250,7 @@
 				3338241E2A3D15DD00DECEA8 /* Jailbreak.swift in Sources */,
 				333824342A3D4E8100DECEA8 /* Reboot.swift in Sources */,
 				AAD2FA372A3DBB2E008D8AF1 /* ThemePicker.swift in Sources */,
-				333823DE2A3C282E00DECEA8 /* ContentView.swift in Sources */,
+				333823DE2A3C282E00DECEA8 /* AORAInteractor.swift in Sources */,
 				2F60E6D52A40AE54004B9838 /* DeviceInfo.swift in Sources */,
 				33F98EA02A413F3F001B1A27 /* BannerStyle.swift in Sources */,
 				333824432A3E715900DECEA8 /* Validation.swift in Sources */,

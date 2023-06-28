@@ -11,8 +11,6 @@ import MachO
 struct Main: View {
     @ObservedObject var options = Settings.shared
     @Binding var isTabViewShown: Bool
-    @State private var showAlert = false
-    @State private var showToast = false
     
     let f = UINotificationFeedbackGenerator()
     
@@ -26,27 +24,12 @@ struct Main: View {
             
             Spacer()
             
-            Button(action: {
-                f.notificationOccurred(.success)
-                showAlert = true
-            }) {
-                HStack {
-                    Image(systemName: "info.circle")
-                        .foregroundColor(.white.opacity(0.4))
-                    
-                    Text("\(DeviceInfo.current.machineName) running \(DeviceInfo.current.platformName) \(DeviceInfo.current.platformVer)")
-                        .foregroundColor(.white.opacity(0.4))
-                        .font(.subheadline)
-                }
-            }
-            .alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text("Supported Firmwares"),
-                    message: Text("iOS 14.6 - 14.8"),
-                    dismissButton: .default(Text("OK"))
-                )
-            }
+            Text("\(DeviceInfo.current.machineName) running \(DeviceInfo.current.platformName) \(DeviceInfo.current.platformVer)")
+                .foregroundColor(.white.opacity(0.4))
+                .font(.subheadline)
+            
             .padding()
+            
             Section() {
                 VStack(spacing: 10) {
                     Toggle("Tweaks", isOn: $options.isTweaksEnabled)

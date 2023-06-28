@@ -13,7 +13,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) private var colorScheme
     @State private var selectedTab: Tabs = .main
     @State private var blurOpacity: Double = 0.7
-    @StateObject private var toastState = ToastState()
+    @StateObject var toastState = ToastState()
 
     var body: some View {
         ZStack {
@@ -44,6 +44,7 @@ struct ContentView: View {
                             .frame(maxWidth: 375)
                             .tag(Tabs.credits)
                     }
+                    .environmentObject(toastState)
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                     .indexViewStyle(.page(backgroundDisplayMode: .always))
                 } else {
@@ -65,7 +66,7 @@ struct ContentView: View {
             }
         )
         .toast(isPresenting: $toastState.showToast) {
-            toastState.activeToast?.toast
+            toastState.activeToast?.toast ?? defaultToast()
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {

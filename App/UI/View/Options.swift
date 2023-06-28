@@ -9,10 +9,9 @@ import SwiftUI
 
 struct Options: View {
     @ObservedObject var options = Settings.shared
+    @EnvironmentObject var toastState: ToastState
     @State var textFieldInput: String = ""
-    @State private var showToast = false
-    @State private var isShowingInvalidToast = false
-    
+
     let f = UINotificationFeedbackGenerator()
     
     var body: some View {
@@ -51,14 +50,12 @@ struct Options: View {
                                 
                                 if regex.firstMatch(in: textFieldInput, options: [], range: range) != nil {
                                     options.textFieldText = textFieldInput
-                                    showToast = true
-                                    isShowingInvalidToast = false
+                                    toastState.show(toast: .noncesuccess)
                                     
                                     f.notificationOccurred(.success)
                                 } else {
                                     textFieldInput = ""
-                                    showToast = true
-                                    isShowingInvalidToast = true
+                                    toastState.show(toast: .nonceerror)
                                     
                                     f.notificationOccurred(.error)
                                 }
@@ -115,17 +112,6 @@ struct Options: View {
             .applyLinearGradientMask()
         }
         .padding()
-        .toast(isPresenting: $showToast) {
-            AlertToast(displayMode: .banner(.pop),
-                       type: isShowingInvalidToast ?
-                .systemImage("exclamationmark.triangle.fill", Color(UIColor.label).opacity(0.4)) :
-                    .systemImage("checkmark.circle.fill", Color(UIColor.label).opacity(0.4)),
-                       title: isShowingInvalidToast ? "Error" : "Success",
-                       subTitle: isShowingInvalidToast ?
-                       "That doesn't look right. The generator should start with 0x and contain 16 digits/letters A to F." :
-                        "The generator will be set every time you activate Aurora."
-            )
-        }
     }
     
 }

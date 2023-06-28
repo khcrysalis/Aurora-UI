@@ -13,7 +13,8 @@ struct ContentView: View {
     @Environment(\.colorScheme) private var colorScheme
     @State private var selectedTab: Tabs = .main
     @State private var blurOpacity: Double = 0.7
-    
+    @StateObject private var toastState = ToastState()
+
     var body: some View {
         ZStack {
             if !isTabViewShown {
@@ -51,6 +52,7 @@ struct ContentView: View {
                 }
             }
             .animation(.easeOut(duration: 0.4))
+            
         }
         .animation(.easeOut(duration: 0.4))
         .background(
@@ -62,6 +64,16 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
             }
         )
+        .toast(isPresenting: $toastState.showToast) {
+            toastState.activeToast?.toast
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if isSimulator() {
+                    toastState.show(toast: .demoMode)
+                }
+            }
+        }
         .ignoresSafeArea(.keyboard)
     }
     
@@ -71,7 +83,7 @@ struct ContentView: View {
         case credits
     }
 }
-
+//
 
 extension View {
     func hideKeyboard() {

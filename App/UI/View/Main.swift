@@ -74,16 +74,6 @@ struct Main: View {
         .padding()
         .padding(.bottom, 30)
         .transition(.opacity)
-        .toast(isPresenting: $showToast) {
-            AlertToast(displayMode: .banner(.pop), type: .systemImage("exclamationmark.triangle.fill", Color(UIColor.label).opacity(0.4)), title: "AORAInteractor is in Demo Mode", subTitle: "This will not actually jailbreak your device.")
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                if isSimulator() {
-                    showToast = true
-                }
-            }
-        }
     }
 }
 

@@ -22,7 +22,6 @@
 		333824432A3E715900DECEA8 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333824422A3E715900DECEA8 /* Validation.swift */; };
 		336F0C422A3E813500226184 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F0C412A3E813500226184 /* Logging.swift */; };
 		33A4819D2A3F18810048FE22 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4819C2A3F18810048FE22 /* Background.swift */; };
-		33D954722A4A72F300429300 /* LookinServer in Frameworks */ = {isa = PBXBuildFile; productRef = 33D954712A4A72F300429300 /* LookinServer */; };
 		33D954792A4ADD2300429300 /* Qotd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D954782A4ADD2300429300 /* Qotd.swift */; };
 		33D9547C2A4AE2B800429300 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 33D9547B2A4AE2B800429300 /* SDWebImageSwiftUI */; };
 		33D9547E2A4C2B1900429300 /* Banners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9547D2A4C2B1900429300 /* Banners.swift */; };
@@ -63,7 +62,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D9547C2A4AE2B800429300 /* SDWebImageSwiftUI in Frameworks */,
-				33D954722A4A72F300429300 /* LookinServer in Frameworks */,
 				AAAF1B062A3E944A00FBEBAF /* SwiftUIBackports in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +179,6 @@
 			name = Aurora;
 			packageProductDependencies = (
 				AAAF1B052A3E944A00FBEBAF /* SwiftUIBackports */,
-				33D954712A4A72F300429300 /* LookinServer */,
 				33D9547B2A4AE2B800429300 /* SDWebImageSwiftUI */,
 			);
 			productName = rambutan;
@@ -214,7 +211,6 @@
 			mainGroup = 333823CF2A3C282E00DECEA8;
 			packageReferences = (
 				AAAF1B042A3E944900FBEBAF /* XCRemoteSwiftPackageReference "SwiftUIBackports" */,
-				33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */,
 				33D9547A2A4AE2B800429300 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 333823D92A3C282E00DECEA8 /* Products */;
@@ -318,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = /Users/samara/Documents/GitHub/rambutan/aurora/Info.plist;
+				INFOPLIST_FILE = /Users/samara/Documents/GitHub/rambutan/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -374,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = /Users/samara/Documents/GitHub/rambutan/aurora/Info.plist;
+				INFOPLIST_FILE = /Users/samara/Documents/GitHub/rambutan/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -396,7 +392,7 @@
 				DEVELOPMENT_TEAM = DLSL362JHJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = /Users/samara/Documents/GitHub/rambutan/aurora/Info.plist;
+				INFOPLIST_FILE = /Users/samara/Documents/GitHub/rambutan/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Aurora;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -431,7 +427,7 @@
 				DEVELOPMENT_TEAM = DLSL362JHJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = /Users/samara/Documents/GitHub/rambutan/aurora/Info.plist;
+				INFOPLIST_FILE = /Users/samara/Documents/GitHub/rambutan/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Aurora;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -479,14 +475,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/QMUI/LookinServer/";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		33D9547A2A4AE2B800429300 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -506,11 +494,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		33D954712A4A72F300429300 /* LookinServer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 33D954702A4A72F300429300 /* XCRemoteSwiftPackageReference "LookinServer" */;
-			productName = LookinServer;
-		};
 		33D9547B2A4AE2B800429300 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 33D9547A2A4AE2B800429300 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

@@ -24,13 +24,6 @@ private func filterModel(_ ident: String) -> [Int] {
 }
 
 class info {
-    // Gets CoreFoundation Version (e.g. 1900)
-    public static func getCFVer(_ exact: Bool = false) -> Int {
-        let CFVersionNumber = kCFCoreFoundationVersionNumber
-        if (exact) {return Int(floor(kCFCoreFoundationVersionNumber))}
-        
-        return Int(floor(kCFCoreFoundationVersionNumber / 100) * 100)
-    }
 
     // Gets device platform (e.g. iOS, iPadOS, WatchOS, etc)
     public static func getDevicePlatform() -> String {

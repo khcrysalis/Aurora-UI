@@ -74,7 +74,7 @@
 		333823CF2A3C282E00DECEA8 = {
 			isa = PBXGroup;
 			children = (
-				333823DA2A3C282E00DECEA8 /* aurora */,
+				333823DA2A3C282E00DECEA8 /* App */,
 				333823D92A3C282E00DECEA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		333823DA2A3C282E00DECEA8 /* aurora */ = {
+		333823DA2A3C282E00DECEA8 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				33D954762A4A959600429300 /* Info.plist */,
@@ -95,7 +95,7 @@
 				333823DB2A3C282E00DECEA8 /* auroraApp.swift */,
 				333824052A3C2A1900DECEA8 /* UI */,
 			);
-			path = aurora;
+			path = App;
 			sourceTree = "<group>";
 		};
 		333824052A3C2A1900DECEA8 /* UI */ = {
@@ -128,7 +128,6 @@
 				333824092A3C38EA00DECEA8 /* Blurs.swift */,
 				333824122A3C73B100DECEA8 /* CellModifiers.swift */,
 				33F98E9F2A413F3F001B1A27 /* BannerStyle.swift */,
-				33D9547D2A4C2B1900429300 /* Banners.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -156,6 +155,7 @@
 		AAD2FA332A3DB5B8008D8AF1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				33D9547D2A4C2B1900429300 /* Banners.swift */,
 				AAD2FA362A3DBB2E008D8AF1 /* ThemePicker.swift */,
 				2F60E6D42A40AE54004B9838 /* DeviceInfo.swift */,
 				33D954782A4ADD2300429300 /* Qotd.swift */,

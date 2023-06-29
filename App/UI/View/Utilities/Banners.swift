@@ -35,8 +35,8 @@ enum AORABanners {
 }
 func defaultToast() -> AlertToast {
     return AlertToast(displayMode: .banner(.pop),
-                      type: .systemImage("info.circle", Color.blue),
-                      title: "AORAInteractor: Primal | Lamia",
+                      type: .systemImage("questionmark.circle.fill", Color(UIColor.label).opacity(0.4)),
+                      title: "Primal | Lamia",
                       subTitle: """
                                 Some say a few are chosen and the rest are dregs, but I say we humans have our humanity.
                                 

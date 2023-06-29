@@ -20,6 +20,7 @@ struct Jailbreak: View {
         ZStack {
             if showRebootView {
                 Reboot()
+                    .frame(maxWidth: 375)
                     .transition(.opacity)
             } else {
                 VStack {
@@ -27,7 +28,7 @@ struct Jailbreak: View {
                         Image(systemName: "house.fill")
                             .resizable()
                             .frame(width: 37, height: 32)
-                            .foregroundColor(Color(UIColor.label).opacity(0.2))
+                            .foregroundColor(.white.opacity(0.2))
                             .shadow(color: Color.black.opacity(0.1), radius: 10)
                             .modifier(PulsatingShadow(scale: shadowScale))
                             .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
@@ -44,13 +45,13 @@ struct Jailbreak: View {
                                     HStack {
                                         VStack(alignment: .leading) {
                                             Text(log.message)
-                                                .foregroundColor(Color(UIColor.label))
+                                                .foregroundColor(.white)
                                                 .font(.headline)
                                                 .padding(.leading, 20)
                                         }
                                         Spacer()
                                     }
-                                    .padding(.vertical, 10)
+                                    .padding(.vertical, 3)
                                 }
                             }
                             .onChange(of: console.logs) { _ in
@@ -59,6 +60,25 @@ struct Jailbreak: View {
                         }
                     }
                     .mask(LinearGradient(gradient: Gradient(colors: [.black, .black, .clear]), startPoint: .bottom, endPoint: .top))
+                    .opacity(logDrawerOpen ? 1 : 0).transition(.opacity)
+                    Spacer()
+                    VStack{
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(console.line1?.message ?? "")
+                                    .foregroundColor(Color(UIColor.label))
+                                    .font(.headline)
+                                    .padding(.leading, 20)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .background(Blur(style: .systemThinMaterial))
+                        .foregroundColor(.white)
+                        .cornerRadius(26)
+                        .padding(.bottom, 5)
+                        .shadow(color: Color.black.opacity(0.1), radius: 10)
+                    }
                     
                     HStack {
                         VStack {
@@ -77,24 +97,12 @@ struct Jailbreak: View {
                             .foregroundColor(.black)
                             .cornerRadius(26)
                             .onTapGesture {
-                                self.logDrawerOpen = true
+                                self.logDrawerOpen.toggle()
                             }
-                            .sheet(isPresented: $logDrawerOpen, content: {
-                                ScrollView {
-                                    Text("TODO")
-                                }
-                                .background(RemoveBG())
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(Blur(style: .systemThinMaterial))
-                                .ignoresSafeArea()
-                            })
                         }
                     }
-                    //.padding(.bottom, 30)
-                    
                 }
                 .padding()
-                //.animation(.easeInOut(duration: 1.0))
             }
         }
         .onAppear {

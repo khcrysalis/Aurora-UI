@@ -20,14 +20,14 @@ struct ContentView: View {
             if !isTabViewShown {
                 Color.black
                     .ignoresSafeArea()
-                    .opacity(0.5)
+                    .opacity(0.3)
             }
             
             ZStack {
                 if selectedTab != .main {
-                    Blur(style: .systemChromeMaterialDark)
+                    Color.black
                         .ignoresSafeArea()
-                        .opacity(blurOpacity)
+                        .opacity(0.4)
                 }
                 
                 if isTabViewShown {

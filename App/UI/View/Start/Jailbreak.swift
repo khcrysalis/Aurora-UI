@@ -62,13 +62,21 @@ struct Jailbreak: View {
                     .mask(LinearGradient(gradient: Gradient(colors: [.black, .black, .clear]), startPoint: .bottom, endPoint: .top))
                     .opacity(logDrawerOpen ? 1 : 0).transition(.opacity)
                     Spacer()
+                    
+                    
+                    
+                    
                     VStack{
                         HStack {
-                            VStack(alignment: .leading) {
+                            VStack(alignment: .leading, spacing: 10) {
+                                
                                 Text(console.line1?.message ?? "")
                                     .foregroundColor(Color(UIColor.label))
-                                    .font(.headline)
-                                    .padding(.leading, 20)
+                                    .font(.title3).bold()
+                                    .padding(.bottom, 4)
+                                
+                                Text("Bootstrapping")
+                                    .font(.subheadline)
                             }
                             Spacer()
                         }
@@ -79,6 +87,9 @@ struct Jailbreak: View {
                         .padding(.bottom, 5)
                         .shadow(color: Color.black.opacity(0.1), radius: 10)
                     }
+                    
+                    
+                    
                     
                     HStack {
                         VStack {
@@ -120,22 +131,22 @@ struct Jailbreak: View {
     }
     
     func launchExampleExploit() {
-        console.log("Obtaining system privileges...")
+        console.log("Obtaining system privileges")
         sleep(1)
-        console.log("Exploiting...")
+        console.log("Exploiting")
         sleep(1)
-        console.log("Installing Strap...")
+        console.log("Obtaining PAC")
         sleep(1)
-        console.log("Installing Strap...")
+        console.log("Installing Bootstrap")
         sleep(1)
-        console.log("Installing Strap...")
+        console.log("Installing Sources")
         sleep(1)
-        console.log("Installing Strap...")
+        console.log("Checking Strap")
         sleep(1)
-        console.log("Installing Strap...")
+        console.log("Finishing")
         sleep(1)
         
-        console.log("Cleaning up...")
+        console.log("Cleaning up")
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 //                showRebootView = true
 //              }
